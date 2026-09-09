@@ -106,3 +106,5 @@ var App = (function(){
   window.addEventListener("hashchange", route);
   return { init: function(){ initNav(); load(); }, route: route, openReport: openReport, closeReport: closeReport, submitReport: submitReport };
 })();
+
+App.init();
