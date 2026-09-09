@@ -1,0 +1,1206 @@
+{
+ "generated_at": "2026-09-09 17:50:09",
+ "source": "周报Base·26年7月时效表",
+ "rows": [
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "巴西",
+   "pkg": 1656,
+   "std_days": 25,
+   "ontime_rate": 34.0,
+   "over30_rate": 5.8,
+   "over_total": 1093,
+   "status": "不达标"
+  },
+  {
+   "channel": "捷邮-中东专线小包",
+   "country": "科威特",
+   "pkg": 343,
+   "std_days": 13,
+   "ontime_rate": 66.2,
+   "over30_rate": 0.0,
+   "over_total": 116,
+   "status": "不达标"
+  },
+  {
+   "channel": "捷邮-中东专线小包",
+   "country": "卡塔尔",
+   "pkg": 341,
+   "std_days": 12,
+   "ontime_rate": 91.5,
+   "over30_rate": 7.0,
+   "over_total": 29,
+   "status": "不达标"
+  },
+  {
+   "channel": "捷邮-中东专线小包",
+   "country": "巴林",
+   "pkg": 230,
+   "std_days": 12,
+   "ontime_rate": 79.6,
+   "over30_rate": 0.0,
+   "over_total": 47,
+   "status": "不达标"
+  },
+  {
+   "channel": "捷邮-中东专线小包",
+   "country": "阿曼",
+   "pkg": 117,
+   "std_days": 10,
+   "ontime_rate": 55.6,
+   "over30_rate": 0.0,
+   "over_total": 52,
+   "status": "不达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "捷克",
+   "pkg": 113,
+   "std_days": 14,
+   "ontime_rate": 63.7,
+   "over30_rate": 0.0,
+   "over_total": 41,
+   "status": "不达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "保加利亚",
+   "pkg": 90,
+   "std_days": 14,
+   "ontime_rate": 51.1,
+   "over30_rate": 0.0,
+   "over_total": 44,
+   "status": "不达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "瑞典",
+   "pkg": 77,
+   "std_days": 14,
+   "ontime_rate": 58.4,
+   "over30_rate": 0.0,
+   "over_total": 32,
+   "status": "不达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "爱尔兰",
+   "pkg": 74,
+   "std_days": 14,
+   "ontime_rate": 70.3,
+   "over30_rate": 1.4,
+   "over_total": 22,
+   "status": "不达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "匈牙利",
+   "pkg": 61,
+   "std_days": 14,
+   "ontime_rate": 44.3,
+   "over30_rate": 0.0,
+   "over_total": 34,
+   "status": "不达标"
+  },
+  {
+   "channel": "广州安速-大陆UPS-红单小货",
+   "country": "日本",
+   "pkg": 47,
+   "std_days": 5,
+   "ontime_rate": 68.1,
+   "over30_rate": 0.0,
+   "over_total": 15,
+   "status": "不达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "以色列",
+   "pkg": 29,
+   "std_days": 14,
+   "ontime_rate": 51.7,
+   "over30_rate": 0.0,
+   "over_total": 14,
+   "status": "不达标"
+  },
+  {
+   "channel": "广州安速-大陆UPS-红单小货",
+   "country": "加拿大",
+   "pkg": 21,
+   "std_days": 7,
+   "ontime_rate": 71.4,
+   "over30_rate": 0.0,
+   "over_total": 6,
+   "status": "不达标"
+  },
+  {
+   "channel": "谷仓海外仓尾程-G2G_STANDARD",
+   "country": "意大利",
+   "pkg": 18,
+   "std_days": 5,
+   "ontime_rate": 5.6,
+   "over30_rate": 0.0,
+   "over_total": 17,
+   "status": "不达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "斯洛伐克",
+   "pkg": 16,
+   "std_days": 14,
+   "ontime_rate": 68.8,
+   "over30_rate": 0.0,
+   "over_total": 5,
+   "status": "不达标"
+  },
+  {
+   "channel": "广州安速-大陆UPS-红单小货",
+   "country": "墨西哥",
+   "pkg": 15,
+   "std_days": 7,
+   "ontime_rate": 33.3,
+   "over30_rate": 0.0,
+   "over_total": 10,
+   "status": "不达标"
+  },
+  {
+   "channel": "DPEX(迪比翼)-DPEX快递",
+   "country": "柬埔寨",
+   "pkg": 14,
+   "std_days": 10,
+   "ontime_rate": 71.4,
+   "over30_rate": 0.0,
+   "over_total": 4,
+   "status": "不达标"
+  },
+  {
+   "channel": "优美宇通-台湾711直发",
+   "country": "中国台湾",
+   "pkg": 9,
+   "std_days": 10,
+   "ontime_rate": 77.8,
+   "over30_rate": 0.0,
+   "over_total": 2,
+   "status": "不达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "克罗地亚",
+   "pkg": 9,
+   "std_days": 20,
+   "ontime_rate": 88.9,
+   "over30_rate": 11.1,
+   "over_total": 1,
+   "status": "不达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "加纳",
+   "pkg": 9,
+   "std_days": 18,
+   "ontime_rate": 77.8,
+   "over30_rate": 0.0,
+   "over_total": 2,
+   "status": "不达标"
+  },
+  {
+   "channel": "捷邮-广州EUB",
+   "country": "土耳其",
+   "pkg": 7,
+   "std_days": 25,
+   "ontime_rate": 0.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "不达标"
+  },
+  {
+   "channel": "谷仓海外仓尾程-USPS GroundAdvantage",
+   "country": "美国",
+   "pkg": 4,
+   "std_days": 5,
+   "ontime_rate": 25.0,
+   "over30_rate": 0.0,
+   "over_total": 3,
+   "status": "不达标"
+  },
+  {
+   "channel": "广州安速-大陆UPS-红单小货",
+   "country": "瑞典",
+   "pkg": 4,
+   "std_days": 7,
+   "ontime_rate": 0.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "不达标"
+  },
+  {
+   "channel": "广州安速-大陆UPS-红单小货",
+   "country": "新加坡",
+   "pkg": 2,
+   "std_days": 5,
+   "ontime_rate": 50.0,
+   "over30_rate": 0.0,
+   "over_total": 1,
+   "status": "不达标"
+  },
+  {
+   "channel": "谷仓海外仓尾程-DHL国际包裹派送",
+   "country": "罗马尼亚",
+   "pkg": 2,
+   "std_days": 5,
+   "ontime_rate": 50.0,
+   "over30_rate": 0.0,
+   "over_total": 1,
+   "status": "不达标"
+  },
+  {
+   "channel": "广州安速-大陆UPS-红单小货",
+   "country": "葡萄牙",
+   "pkg": 2,
+   "std_days": 7,
+   "ontime_rate": 0.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "不达标"
+  },
+  {
+   "channel": "广州安速-大陆UPS-红单小货",
+   "country": "爱尔兰",
+   "pkg": 2,
+   "std_days": 7,
+   "ontime_rate": 50.0,
+   "over30_rate": 0.0,
+   "over_total": 1,
+   "status": "不达标"
+  },
+  {
+   "channel": "飞特-广州线下EUB",
+   "country": "厄瓜多尔",
+   "pkg": 2,
+   "std_days": 20,
+   "ontime_rate": 0.0,
+   "over30_rate": 50.0,
+   "over_total": 0,
+   "status": "不达标"
+  },
+  {
+   "channel": "谷仓海外仓-1-USPS GroundAdvantage",
+   "country": "美国",
+   "pkg": 1,
+   "std_days": 5,
+   "ontime_rate": 0.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "不达标"
+  },
+  {
+   "channel": "谷仓海外仓尾程-G2G_STANDARD",
+   "country": "波兰",
+   "pkg": 1,
+   "std_days": 5,
+   "ontime_rate": 0.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "不达标"
+  },
+  {
+   "channel": "优美宇通-台湾全家直发",
+   "country": "中国台湾",
+   "pkg": 1,
+   "std_days": 10,
+   "ontime_rate": 0.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "不达标"
+  },
+  {
+   "channel": "谷仓海外仓尾程-DHL国际包裹派送",
+   "country": "立陶宛",
+   "pkg": 1,
+   "std_days": 5,
+   "ontime_rate": 0.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "不达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "坦桑尼亚",
+   "pkg": 1,
+   "std_days": 17,
+   "ontime_rate": 0.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "不达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "塞内加尔",
+   "pkg": 1,
+   "std_days": 19,
+   "ontime_rate": 0.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "不达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "法国",
+   "pkg": 3578,
+   "std_days": 14,
+   "ontime_rate": 84.6,
+   "over30_rate": 0.2,
+   "over_total": 550,
+   "status": "观察"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "波兰",
+   "pkg": 262,
+   "std_days": 14,
+   "ontime_rate": 82.8,
+   "over30_rate": 0.8,
+   "over_total": 45,
+   "status": "观察"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "罗马尼亚",
+   "pkg": 223,
+   "std_days": 14,
+   "ontime_rate": 82.5,
+   "over30_rate": 0.4,
+   "over_total": 39,
+   "status": "观察"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "泰国",
+   "pkg": 177,
+   "std_days": 8,
+   "ontime_rate": 84.7,
+   "over30_rate": 0.0,
+   "over_total": 27,
+   "status": "观察"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "塞浦路斯",
+   "pkg": 72,
+   "std_days": 16,
+   "ontime_rate": 80.6,
+   "over30_rate": 0.0,
+   "over_total": 14,
+   "status": "观察"
+  },
+  {
+   "channel": "谷仓海外仓尾程-48小时包裹不签名",
+   "country": "英国",
+   "pkg": 50,
+   "std_days": 2,
+   "ontime_rate": 84.0,
+   "over30_rate": 0.0,
+   "over_total": 8,
+   "status": "观察"
+  },
+  {
+   "channel": "广州安速-大陆UPS-红单小货",
+   "country": "马来西亚",
+   "pkg": 46,
+   "std_days": 5,
+   "ontime_rate": 82.6,
+   "over30_rate": 0.0,
+   "over_total": 8,
+   "status": "观察"
+  },
+  {
+   "channel": "广州安速-FEX-广州",
+   "country": "意大利",
+   "pkg": 45,
+   "std_days": 7,
+   "ontime_rate": 82.2,
+   "over30_rate": 0.0,
+   "over_total": 8,
+   "status": "观察"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "丹麦",
+   "pkg": 36,
+   "std_days": 14,
+   "ontime_rate": 80.6,
+   "over30_rate": 0.0,
+   "over_total": 7,
+   "status": "观察"
+  },
+  {
+   "channel": "谷仓海外仓尾程-G2G_STANDARD",
+   "country": "法国",
+   "pkg": 22,
+   "std_days": 7,
+   "ontime_rate": 81.8,
+   "over30_rate": 0.0,
+   "over_total": 4,
+   "status": "观察"
+  },
+  {
+   "channel": "广州安速-FEX-广州",
+   "country": "法国",
+   "pkg": 18,
+   "std_days": 7,
+   "ontime_rate": 83.3,
+   "over30_rate": 0.0,
+   "over_total": 3,
+   "status": "观察"
+  },
+  {
+   "channel": "云途-云途全球商派专线（标快普货）",
+   "country": "美国",
+   "pkg": 18202,
+   "std_days": 16,
+   "ontime_rate": 98.5,
+   "over30_rate": 0.1,
+   "over_total": 266,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "英国",
+   "pkg": 4388,
+   "std_days": 14,
+   "ontime_rate": 98.2,
+   "over30_rate": 0.1,
+   "over_total": 81,
+   "status": "达标"
+  },
+  {
+   "channel": "捷邮-中东专线小包",
+   "country": "沙特阿拉伯",
+   "pkg": 3653,
+   "std_days": 14,
+   "ontime_rate": 99.1,
+   "over30_rate": 0.1,
+   "over_total": 34,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-A01普货",
+   "country": "美国",
+   "pkg": 2714,
+   "std_days": 16,
+   "ontime_rate": 96.5,
+   "over30_rate": 0.4,
+   "over_total": 94,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "意大利",
+   "pkg": 1983,
+   "std_days": 14,
+   "ontime_rate": 94.6,
+   "over30_rate": 0.2,
+   "over_total": 108,
+   "status": "达标"
+  },
+  {
+   "channel": "捷邮-中东专线小包",
+   "country": "阿联酋",
+   "pkg": 1820,
+   "std_days": 12,
+   "ontime_rate": 93.1,
+   "over30_rate": 0.3,
+   "over_total": 125,
+   "status": "达标"
+  },
+  {
+   "channel": "飞特-飞特标准挂号普货(EY)",
+   "country": "加拿大",
+   "pkg": 1563,
+   "std_days": 24,
+   "ontime_rate": 97.8,
+   "over30_rate": 0.1,
+   "over_total": 35,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "澳大利亚",
+   "pkg": 1340,
+   "std_days": 14,
+   "ontime_rate": 98.0,
+   "over30_rate": 0.0,
+   "over_total": 27,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "德国",
+   "pkg": 1247,
+   "std_days": 14,
+   "ontime_rate": 93.2,
+   "over30_rate": 0.6,
+   "over_total": 85,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "日本",
+   "pkg": 1046,
+   "std_days": 10,
+   "ontime_rate": 88.4,
+   "over30_rate": 0.6,
+   "over_total": 121,
+   "status": "达标"
+  },
+  {
+   "channel": "DPEX(迪比翼)-DPEX快递",
+   "country": "新加坡",
+   "pkg": 538,
+   "std_days": 7,
+   "ontime_rate": 86.4,
+   "over30_rate": 0.0,
+   "over_total": 73,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "西班牙",
+   "pkg": 465,
+   "std_days": 14,
+   "ontime_rate": 91.6,
+   "over30_rate": 0.6,
+   "over_total": 39,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "瑞士",
+   "pkg": 329,
+   "std_days": 12,
+   "ontime_rate": 97.9,
+   "over30_rate": 0.3,
+   "over_total": 7,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "荷兰",
+   "pkg": 325,
+   "std_days": 14,
+   "ontime_rate": 90.2,
+   "over30_rate": 0.0,
+   "over_total": 32,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "墨西哥",
+   "pkg": 306,
+   "std_days": 19,
+   "ontime_rate": 97.1,
+   "over30_rate": 1.0,
+   "over_total": 9,
+   "status": "达标"
+  },
+  {
+   "channel": "易连-韩国-韩进-海运",
+   "country": "韩国",
+   "pkg": 242,
+   "std_days": 12,
+   "ontime_rate": 94.2,
+   "over30_rate": 0.0,
+   "over_total": 14,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "葡萄牙",
+   "pkg": 216,
+   "std_days": 14,
+   "ontime_rate": 96.8,
+   "over30_rate": 0.0,
+   "over_total": 7,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "比利时",
+   "pkg": 191,
+   "std_days": 14,
+   "ontime_rate": 95.3,
+   "over30_rate": 0.0,
+   "over_total": 9,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "马来西亚",
+   "pkg": 189,
+   "std_days": 10,
+   "ontime_rate": 93.7,
+   "over30_rate": 0.0,
+   "over_total": 12,
+   "status": "达标"
+  },
+  {
+   "channel": "谷仓海外仓尾程-GC_PARCEL",
+   "country": "美国",
+   "pkg": 187,
+   "std_days": 5,
+   "ontime_rate": 85.6,
+   "over30_rate": 0.0,
+   "over_total": 27,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "加拿大",
+   "pkg": 183,
+   "std_days": 15,
+   "ontime_rate": 93.4,
+   "over30_rate": 0.0,
+   "over_total": 12,
+   "status": "达标"
+  },
+  {
+   "channel": "顺丰-顺丰标快",
+   "country": "中国香港",
+   "pkg": 154,
+   "std_days": 3,
+   "ontime_rate": 87.7,
+   "over30_rate": 0.0,
+   "over_total": 19,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "菲律宾",
+   "pkg": 135,
+   "std_days": 14,
+   "ontime_rate": 97.8,
+   "over30_rate": 0.0,
+   "over_total": 3,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "越南",
+   "pkg": 130,
+   "std_days": 14,
+   "ontime_rate": 96.9,
+   "over30_rate": 0.0,
+   "over_total": 4,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "奥地利",
+   "pkg": 117,
+   "std_days": 14,
+   "ontime_rate": 87.2,
+   "over30_rate": 0.9,
+   "over_total": 15,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "尼日利亚",
+   "pkg": 101,
+   "std_days": 20,
+   "ontime_rate": 97.0,
+   "over30_rate": 0.0,
+   "over_total": 3,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "希腊",
+   "pkg": 90,
+   "std_days": 16,
+   "ontime_rate": 96.7,
+   "over30_rate": 0.0,
+   "over_total": 3,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "美国",
+   "pkg": 85,
+   "std_days": 16,
+   "ontime_rate": 94.1,
+   "over30_rate": 0.0,
+   "over_total": 5,
+   "status": "达标"
+  },
+  {
+   "channel": "优美宇通-YM030-台湾专线-黑猫普货",
+   "country": "中国台湾",
+   "pkg": 74,
+   "std_days": 10,
+   "ontime_rate": 85.1,
+   "over30_rate": 0.0,
+   "over_total": 11,
+   "status": "达标"
+  },
+  {
+   "channel": "谷仓海外仓-1-GC_PARCEL",
+   "country": "美国",
+   "pkg": 67,
+   "std_days": 5,
+   "ontime_rate": 91.0,
+   "over30_rate": 0.0,
+   "over_total": 6,
+   "status": "达标"
+  },
+  {
+   "channel": "DPEX(迪比翼)-DPEX新西兰FW快速小包(B2C)普货",
+   "country": "新西兰",
+   "pkg": 63,
+   "std_days": 10,
+   "ontime_rate": 96.8,
+   "over30_rate": 0.0,
+   "over_total": 2,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠带电）",
+   "country": "哥伦比亚",
+   "pkg": 54,
+   "std_days": 23,
+   "ontime_rate": 85.2,
+   "over30_rate": 0.0,
+   "over_total": 8,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-A01特惠普货",
+   "country": "美国",
+   "pkg": 47,
+   "std_days": 16,
+   "ontime_rate": 93.6,
+   "over30_rate": 0.0,
+   "over_total": 3,
+   "status": "达标"
+  },
+  {
+   "channel": "广州安速-大陆UPS包税(美国)",
+   "country": "美国",
+   "pkg": 45,
+   "std_days": 7,
+   "ontime_rate": 97.8,
+   "over30_rate": 0.0,
+   "over_total": 1,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "爱沙尼亚",
+   "pkg": 39,
+   "std_days": 14,
+   "ontime_rate": 100.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "达标"
+  },
+  {
+   "channel": "广州安速-FEX-广州",
+   "country": "英国",
+   "pkg": 38,
+   "std_days": 7,
+   "ontime_rate": 92.1,
+   "over30_rate": 2.6,
+   "over_total": 3,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠带电）",
+   "country": "卢森堡",
+   "pkg": 37,
+   "std_days": 14,
+   "ontime_rate": 97.3,
+   "over30_rate": 0.0,
+   "over_total": 1,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "立陶宛",
+   "pkg": 34,
+   "std_days": 14,
+   "ontime_rate": 100.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "拉脱维亚",
+   "pkg": 34,
+   "std_days": 14,
+   "ontime_rate": 94.1,
+   "over30_rate": 0.0,
+   "over_total": 2,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途区域专线挂号（特惠普货）",
+   "country": "巴西",
+   "pkg": 30,
+   "std_days": 25,
+   "ontime_rate": 86.7,
+   "over30_rate": 0.0,
+   "over_total": 4,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球精选专线挂号（特惠普货）",
+   "country": "挪威",
+   "pkg": 28,
+   "std_days": 14,
+   "ontime_rate": 92.9,
+   "over30_rate": 0.0,
+   "over_total": 2,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "芬兰",
+   "pkg": 27,
+   "std_days": 14,
+   "ontime_rate": 96.3,
+   "over30_rate": 0.0,
+   "over_total": 1,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球精选专线挂号（特惠普货）",
+   "country": "墨西哥",
+   "pkg": 26,
+   "std_days": 19,
+   "ontime_rate": 96.2,
+   "over30_rate": 0.0,
+   "over_total": 1,
+   "status": "达标"
+  },
+  {
+   "channel": "领星海外仓尾程-other",
+   "country": "沙特阿拉伯",
+   "pkg": 22,
+   "std_days": 3,
+   "ontime_rate": 100.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠带电）",
+   "country": "马耳他",
+   "pkg": 14,
+   "std_days": 25,
+   "ontime_rate": 100.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "达标"
+  },
+  {
+   "channel": "领星海外仓尾程-other",
+   "country": "阿联酋",
+   "pkg": 13,
+   "std_days": 3,
+   "ontime_rate": 100.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "达标"
+  },
+  {
+   "channel": "顺丰-顺丰标快",
+   "country": "中国澳门",
+   "pkg": 12,
+   "std_days": 3,
+   "ontime_rate": 91.7,
+   "over30_rate": 0.0,
+   "over_total": 1,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "南非",
+   "pkg": 12,
+   "std_days": 25,
+   "ontime_rate": 91.7,
+   "over30_rate": 0.0,
+   "over_total": 1,
+   "status": "达标"
+  },
+  {
+   "channel": "广州安速-FEX-广州",
+   "country": "西班牙",
+   "pkg": 11,
+   "std_days": 7,
+   "ontime_rate": 90.9,
+   "over30_rate": 0.0,
+   "over_total": 1,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "斯洛文尼亚",
+   "pkg": 9,
+   "std_days": 14,
+   "ontime_rate": 88.9,
+   "over30_rate": 0.0,
+   "over_total": 1,
+   "status": "达标"
+  },
+  {
+   "channel": "广州安速-FEX-广州",
+   "country": "德国",
+   "pkg": 8,
+   "std_days": 7,
+   "ontime_rate": 100.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途岛屿专线（特惠普货）",
+   "country": "日本",
+   "pkg": 8,
+   "std_days": 10,
+   "ontime_rate": 87.5,
+   "over30_rate": 0.0,
+   "over_total": 1,
+   "status": "达标"
+  },
+  {
+   "channel": "广州安速-大陆UPS-红单小货",
+   "country": "韩国",
+   "pkg": 8,
+   "std_days": 7,
+   "ontime_rate": 87.5,
+   "over30_rate": 0.0,
+   "over_total": 1,
+   "status": "达标"
+  },
+  {
+   "channel": "谷仓海外仓尾程-DHL德国派送",
+   "country": "德国",
+   "pkg": 7,
+   "std_days": 5,
+   "ontime_rate": 100.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "新加坡",
+   "pkg": 6,
+   "std_days": 10,
+   "ontime_rate": 100.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "达标"
+  },
+  {
+   "channel": "广州安速-DHL-广州",
+   "country": "美国",
+   "pkg": 5,
+   "std_days": 7,
+   "ontime_rate": 100.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "达标"
+  },
+  {
+   "channel": "万邑通海外仓尾程-Winit Fulfillment-5日达(2-5 Business Days)-US",
+   "country": "美国",
+   "pkg": 4,
+   "std_days": 5,
+   "ontime_rate": 100.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "达标"
+  },
+  {
+   "channel": "广州安速-大陆UPS-红单小货",
+   "country": "澳大利亚",
+   "pkg": 4,
+   "std_days": 7,
+   "ontime_rate": 100.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "达标"
+  },
+  {
+   "channel": "谷仓海外仓尾程-G2G_STANDARD",
+   "country": "荷兰",
+   "pkg": 3,
+   "std_days": 5,
+   "ontime_rate": 100.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "达标"
+  },
+  {
+   "channel": "广州安速-FEX-广州",
+   "country": "荷兰",
+   "pkg": 3,
+   "std_days": 7,
+   "ontime_rate": 100.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "达标"
+  },
+  {
+   "channel": "飞特-广州线下EUB",
+   "country": "乌兹别克斯坦",
+   "pkg": 3,
+   "std_days": 25,
+   "ontime_rate": 100.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "达标"
+  },
+  {
+   "channel": "领星海外仓尾程-USPS",
+   "country": "美国",
+   "pkg": 2,
+   "std_days": 5,
+   "ontime_rate": 100.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "达标"
+  },
+  {
+   "channel": "广州安速-FEX-广州",
+   "country": "比利时",
+   "pkg": 2,
+   "std_days": 7,
+   "ontime_rate": 100.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠带电）",
+   "country": "美国",
+   "pkg": 1,
+   "std_days": 16,
+   "ontime_rate": 100.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途大货18000专线挂号（特惠普货）",
+   "country": "英国",
+   "pkg": 1,
+   "std_days": 14,
+   "ontime_rate": 100.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "达标"
+  },
+  {
+   "channel": "捷邮-中东专线小包",
+   "country": "沙特阿拉伯",
+   "pkg": 1,
+   "std_days": 3,
+   "ontime_rate": 100.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "达标"
+  },
+  {
+   "channel": "广州安速-DHL-广州",
+   "country": "法国",
+   "pkg": 1,
+   "std_days": 7,
+   "ontime_rate": 100.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "达标"
+  },
+  {
+   "channel": "广州安速-FEX-广州",
+   "country": "澳大利亚",
+   "pkg": 1,
+   "std_days": 7,
+   "ontime_rate": 100.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "达标"
+  },
+  {
+   "channel": "广州安速-DHL-广州",
+   "country": "韩国",
+   "pkg": 1,
+   "std_days": 7,
+   "ontime_rate": 100.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "达标"
+  },
+  {
+   "channel": "谷仓海外仓尾程-G2G_STANDARD",
+   "country": "比利时",
+   "pkg": 1,
+   "std_days": 5,
+   "ontime_rate": 100.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "达标"
+  },
+  {
+   "channel": "谷仓海外仓尾程-DHL国际包裹派送",
+   "country": "匈牙利",
+   "pkg": 1,
+   "std_days": 5,
+   "ontime_rate": 100.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "达标"
+  },
+  {
+   "channel": "云途-云途全球专线挂号（特惠普货）",
+   "country": "留尼汪岛",
+   "pkg": 1,
+   "std_days": 20,
+   "ontime_rate": 100.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "达标"
+  },
+  {
+   "channel": "飞特-广州线下EUB",
+   "country": "肯尼亚",
+   "pkg": 1,
+   "std_days": 20,
+   "ontime_rate": 100.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "达标"
+  },
+  {
+   "channel": "飞特-广州线下EUB",
+   "country": "塞尔维亚",
+   "pkg": 1,
+   "std_days": 25,
+   "ontime_rate": 100.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "达标"
+  },
+  {
+   "channel": "飞特-广州线下EUB",
+   "country": "吉尔吉斯斯坦",
+   "pkg": 1,
+   "std_days": 25,
+   "ontime_rate": 100.0,
+   "over30_rate": 0.0,
+   "over_total": 0,
+   "status": "达标"
+  }
+ ]
+}
