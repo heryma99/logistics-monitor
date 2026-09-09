@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>物流监控中心</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="gate" class="gate hidden-when-authed">
+  <div class="gate-box">
+    <div class="gate-logo">◈</div>
+    <h1>物流监控中心</h1>
+    <p class="gate-tip">请输入访问口令</p>
+    <input type="password" id="gate-pwd" placeholder="访问口令" autocomplete="off">
+    <button id="gate-btn">进入</button>
+    <p id="gate-err" class="gate-err"></p>
+  </div>
+</div>
+
+<div id="app" class="app hidden">
+  <header class="topbar">
+    <div class="brand">物流监控中心 <span class="ver">M1</span></div>
+    <div class="top-right">
+      <span id="fresh-badge" class="badge"></span>
+      <button class="btn btn-accent" onclick="App.openReport()">＋ 报异常</button>
+    </div>
+  </header>
+  <nav class="nav" id="nav"></nav>
+  <main id="page" class="page"></main>
+  <footer class="foot">数据快照 <span id="gen-time"></span> · 只读渲染 · 数据源：物流部周报 Base / 跨部门异常单 Base / 云途 API</footer>
+</div>
+
+<div id="modal" class="modal hidden">
+  <div class="modal-box">
+    <h3>报异常（万能登记）</h3>
+    <p class="muted">30 秒登记 · 提交后进入暂存表（状态=待确认）</p>
+    <label>异常描述 *<textarea id="r-desc" rows="3" placeholder="一句话说清异常"></textarea></label>
+    <label>涉及渠道 / 对象<input id="r-obj" placeholder="如：云途带电 / OTF-2201"></label>
+    <label>级别<select id="r-level"><option>黄</option><option>红</option><option>蓝</option></select></label>
+    <div class="modal-actions">
+      <button class="btn" onclick="App.closeReport()">取消</button>
+      <button class="btn btn-accent" onclick="App.submitReport()">提交</button>
+    </div>
+    <p id="r-msg" class="muted"></p>
+  </div>
+</div>
+
+<script src="gate.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
