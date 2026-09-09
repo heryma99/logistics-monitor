@@ -1,0 +1,108 @@
+/* 物流监控中心 SPA — M1
+   页面：指挥舱 / 价格中心 / 小包达标 / 账单对账(壳) / 在途(壳) / 仓库 / 合规(壳) / 质量与告警
+   数据：data/*.json 快照（bake_data.py 产出）*/
+var App = (function(){
+  var PAGES = [
+    ["dashboard","指挥舱"],["price","价格中心"],["xiaobao","小包达标"],
+    ["recon","账单对账"],["transit","在途监控"],["warehouse","仓库看板"],
+    ["compliance","合规中心"],["quality","质量与告警"]
+  ];
+  var D = {}; // data cache
+  function fetchJSON(f){ return fetch("data/"+f).then(r=>r.json()).catch(()=>null); }
+
+  function pill(level){ return '<span class="pill '+({红:"red",不达标:"red",黄:"amber",观察:"amber",达标:"green",绿:"green",gray:"gray"}[level]||"gray")+'">'+level+"</span>"; }
+
+  /* ---------- pages ---------- */
+  function dashboard(){
+    var k = D.kpi || {};
+    var domains = (k.domains||[]).map(d=>'<div class="card" style="margin:0"><div class="flex"><span class="dot '+d.level+'"></span><b style="font-size:13px">'+d.name+'</b></div><div class="muted" style="margin-top:4px">'+d.note+"</div></div>").join("");
+    var alerts = (k.alerts||[]).map(a=>'<tr><td style="width:44px">'+pill(a.level)+'</td><td>'+a.text+'</td><td style="width:110px;color:var(--tx2)">'+a.src+' · '+a.rule+'</td><td style="width:52px;color:var(--blue)">去处理</td></tr>').join("");
+    return '<h2 class="pt">指挥舱</h2><p class="sub">快照 '+k.generated_at+'</p>'
+      + '<div class="kpis">'
+      + '<div class="kpi"><div class="l">今日异常</div><div class="v red">'+(k.today_alerts||0)+"</div></div>"
+      + '<div class="kpi"><div class="l">超期线路</div><div class="v amber">'+(k.overdue_lanes||0)+"</div></div>"
+      + '<div class="kpi"><div class="l">渠道达标</div><div class="v green">'+(k.channels_ok||0)+" / "+(k.channels_total||0)+"</div></div>"
+      + '<div class="kpi"><div class="l">未完结异常单</div><div class="v">'+(k.open_tickets||0)+"</div></div></div>"
+      + '<h3 style="font-size:13.5px;margin-bottom:8px">八域健康度</h3><div class="grid2" style="margin-bottom:16px">'+domains+"</div>"
+      + '<div class="card"><h3>今日异常清单</h3><table><tr><th style="width:44px">级别</th><th>异常</th><th style="width:110px">来源</th><th style="width:52px">操作</th></tr>'+(alerts||'<tr><td colspan=4 class="muted">暂无异常 🎉</td></tr>')+"</table></div>";
+  }
+
+  function price(){
+    var q = (D.quotes&&D.quotes.quotes)||{};
+    function rows(arr,unit){
+      return (arr||[]).slice(0,12).map(x=>"<tr><td>"+(x.channel||"-")+'</td><td>'+(x.region||"-")+'</td><td>'+(x.p21||"-")+'</td><td>'+(x.p101||"-")+'</td><td style="color:var(--tx2)">'+(x.updated||"-").slice(0,10)+"</td></tr>").join("");
+    }
+    return '<h2 class="pt">价格中心</h2><p class="sub">大货报价最新快照（来源：周报 Base 报价表，带更新日期）· 环比版本对比随管道二期接入</p>'
+      + '<div class="card"><h3>美国空派（¥/kg，21KG+ / 101KG+）</h3><table><tr><th>渠道</th><th>分区</th><th>21KG+</th><th>101KG+</th><th>更新日期</th></tr>'+rows(q.air_us)+"</table></div>"
+      + '<div class="card"><h3>美森海运（¥/kg）</h3><table><tr><th>渠道</th><th>分区</th><th>21KG+</th><th>101KG+</th><th>更新日期</th></tr>'+rows(q.sea_us)+"</table></div>"
+      + '<div class="card"><h3>英国渠道</h3><table><tr><th>渠道</th><th>生效日</th><th>21kg+</th><th>101kg+</th></tr>'+rows(q.uk)+"</table></div>";
+  }
+
+  function xiaobao(){
+    var rows = (D.xiaobao&&D.xiaobao.rows)||[];
+    var tr = rows.slice(0,40).map(x=>'<tr><td'+(x.status==="不达标"?' style="color:var(--red);font-weight:500"':x.status==="观察"?' style="color:var(--amber)"':'')+">"+x.channel+'</td><td>'+x.country+'</td><td>'+x.pkg+'</td><td>'+(x.std_days||"-")+'</td><td style="color:'+(x.ontime_rate<80?"var(--red)":x.ontime_rate<85?"var(--amber)":"var(--green)")+'">'+x.ontime_rate+"%</td><td>"+x.over30_rate+"%</td><td>"+pill(x.status)+"</td></tr>").join("");
+    return '<h2 class="pt">小包时效达标</h2><p class="sub">口径：时效内签收率 = 时效内签收 ÷ 包裹数；判定 A15（<85% 黄）/ A16（<80% 或超30天>5% 红）· 数据源：26年7月时效表</p>'
+      + '<div class="card"><table><tr><th>渠道</th><th>国家</th><th>包裹</th><th>标准(天)</th><th>时效内签收</th><th>超30天占比</th><th>判定</th></tr>'+tr+"</table></div>";
+  }
+
+  function warehouse(){
+    var list = (D.warehouse&&D.warehouse.warehouses)||[];
+    var tr = list.map(w=>{
+      var cap = w.ending + w.transit;
+      return '<tr><td>'+w.warehouse+'</td><td>'+w.ym+'</td><td>'+w.ending+'</td><td>'+w.transit+'</td><td>'+w.outbound+'</td><td>'+(w.turnover_days||"-")+"</td></tr>";
+    }).join("");
+    return '<h2 class="pt">仓库看板</h2><p class="sub">海外仓库存与周转（东莞6子仓库容数据走人工导入模板，M2 接入）</p>'
+      + '<div class="card"><table><tr><th>仓库</th><th>月份</th><th>期末库存</th><th>在途</th><th>本月出库</th><th>周转天数</th></tr>'+tr+"</table></div>";
+  }
+
+  function shell(title, note){
+    return '<h2 class="pt">'+title+'</h2><p class="sub">'+note+"</p>"+'<div class="soon">本模块按台账排期于 M2/M3 上线<br>规格见《物流监控中心PRD-v1.3.md》</div>';
+  }
+
+  function quality(){
+    var rows = (D.quality&&D.quality.rows)||[];
+    var tr = rows.slice(0,15).map(x=>'<tr><td>'+x.provider+'</td><td>'+x.problems+'</td><td>'+x.closed+'</td><td>'+x.open+"</td><td>"+(x.close_rate||0)+"%</td></tr>").join("");
+    var alerts = ((D.kpi&&D.kpi.alerts)||[]).map(a=>'<tr><td style="width:44px">'+pill(a.level)+"</td><td>"+a.text+'</td><td style="width:60px">'+a.rule+"</td></tr>").join("");
+    return '<h2 class="pt">质量与告警中心</h2><p class="sub">异常按物流商聚合（来源：B2C异常问题表）· 逐票工单走跨部门异常单体系</p>'
+      + '<div class="card"><h3>告警历史（A 系列规则触发）</h3><table><tr><th style="width:44px">级别</th><th>告警</th><th style="width:60px">规则</th></tr>'+(alerts||'<tr><td colspan=3 class="muted">暂无</td></tr>')+"</table></div>"
+      + '<div class="card"><h3>物流商异常聚合</h3><table><tr><th>物流商</th><th>问题数</th><th>已完结</th><th>未完结</th><th>完结率</th></tr>'+tr+"</table></div>";
+  }
+
+  function recon(){ return shell("账单对账","M2 上线：中运通达解析 + 云途 API 逐票明细（应扣 vs 实扣，差异成单）"); }
+  function transit(){ return shell("在途监控","M3 上线：批次台账 + 云途轨迹订阅（14 节点归因）"); }
+  function compliance(){ return shell("合规中心","M2/M3 上线：证照到期倒计时 + 退税匹配（接物流新政策跟进表）"); }
+
+  var R = {dashboard:dashboard, price:price, xiaobao:xiaobao, recon:recon, transit:transit, warehouse:warehouse, compliance:compliance, quality:quality};
+
+  function route(){
+    var h = (location.hash||"#dashboard").slice(1);
+    if (!R[h]) h = "dashboard";
+    document.getElementById("page").innerHTML = R[h]();
+    document.querySelectorAll("#nav a").forEach(a=>a.classList.toggle("on", a.hash==="#"+h));
+  }
+
+  async function load(){
+    var rs = await Promise.all([fetchJSON("kpi.json"),fetchJSON("quotes.json"),fetchJSON("xiaobao.json"),fetchJSON("warehouse.json"),fetchJSON("quality.json")]);
+    D.kpi=rs[0]; D.quotes=rs[1]; D.xiaobao=rs[2]; D.warehouse=rs[3]; D.quality=rs[4];
+    document.getElementById("gen-time").textContent = (D.kpi&&D.kpi.generated_at)||"-";
+    var fb = document.getElementById("fresh-badge");
+    if (D.kpi&&D.kpi.generated_at){ fb.textContent="数据已加载"; fb.className="badge ok"; } else { fb.textContent="数据未加载"; fb.className="badge stale"; }
+    route();
+  }
+
+  function initNav(){
+    document.getElementById("nav").innerHTML = PAGES.map(p=>'<a href="#'+p[0]+'">'+p[1]+"</a>").join("");
+  }
+
+  function openReport(){ document.getElementById("modal").classList.remove("hidden"); }
+  function closeReport(){ document.getElementById("modal").classList.add("hidden"); }
+  function submitReport(){
+    var desc = document.getElementById("r-desc").value.trim();
+    var msg = document.getElementById("r-msg");
+    if (!desc){ msg.textContent = "请填写异常描述"; return; }
+    msg.textContent = "已记录到本地队列。M1 联调后：提交 → 自动写「自动异常暂存表」→ 飞书推送。当前为前端演示路径。";
+  }
+
+  window.addEventListener("hashchange", route);
+  return { init: function(){ initNav(); load(); }, route: route, openReport: openReport, closeReport: closeReport, submitReport: submitReport };
+})();
