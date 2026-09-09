@@ -1,7 +1,7 @@
 /* gate.js — SHA-256 口令门禁（含 UI 接线）
-   口令：LogiView@2026（SHA-256 存哈希，改口令=换哈希） */
+   口令：0000（SHA-256 存哈希，改口令=换哈希） */
 (function(){
-  var HASH = "dd4f17d0395c2e94ff61a0239bdd614cf1c05af3fe3feb0e7d98f01a0d2a27b6";
+  var HASH = "9af15b336e6a9619928537df30b2e6a2376569fcf9d7e773eccede65606529a0";
   var KEY = "lmc_gate_ok";
 
   function hex(buf){
