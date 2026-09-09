@@ -1,0 +1,76 @@
+{
+ "generated_at": "2026-09-09 17:50:09",
+ "source": "周报Base·B2C异常问题(年度聚合)",
+ "rows": [
+  {
+   "provider": "云途",
+   "problems": 1988.0,
+   "closed": 1944.0,
+   "open": 44.0,
+   "close_rate": 97.8
+  },
+  {
+   "provider": "捷邮",
+   "problems": 224.0,
+   "closed": 224.0,
+   "open": 0.0,
+   "close_rate": 100.0
+  },
+  {
+   "provider": "中运通达",
+   "problems": 216.0,
+   "closed": 216.0,
+   "open": 0.0,
+   "close_rate": 100.0
+  },
+  {
+   "provider": "DPEX",
+   "problems": 30.0,
+   "closed": 30.0,
+   "open": 0.0,
+   "close_rate": 100.0
+  },
+  {
+   "provider": "优美",
+   "problems": 27.0,
+   "closed": 27.0,
+   "open": 0.0,
+   "close_rate": 100.0
+  },
+  {
+   "provider": "飞特",
+   "problems": 24.0,
+   "closed": 24.0,
+   "open": 0.0,
+   "close_rate": 100.0
+  },
+  {
+   "provider": "易连",
+   "problems": 22.0,
+   "closed": 22.0,
+   "open": 0.0,
+   "close_rate": 100.0
+  },
+  {
+   "provider": "谷仓",
+   "problems": 10.0,
+   "closed": 10.0,
+   "open": 0.0,
+   "close_rate": 100.0
+  },
+  {
+   "provider": "顺丰",
+   "problems": 3.0,
+   "closed": 3.0,
+   "open": 0.0,
+   "close_rate": 100.0
+  },
+  {
+   "provider": "艾姆勒",
+   "problems": 2.0,
+   "closed": 2.0,
+   "open": 0.0,
+   "close_rate": 100.0
+  }
+ ]
+}
