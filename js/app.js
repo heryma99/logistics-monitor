@@ -22,19 +22,25 @@ var App = (function(){
       + '<div class="kpi"><div class="l">今日异常</div><div class="v red">'+(k.today_alerts||0)+"</div></div>"
       + '<div class="kpi"><div class="l">超期线路</div><div class="v amber">'+(k.overdue_lanes||0)+"</div></div>"
       + '<div class="kpi"><div class="l">渠道达标</div><div class="v green">'+(k.channels_ok||0)+" / "+(k.channels_total||0)+"</div></div>"
-      + '<div class="kpi"><div class="l">未完结异常单</div><div class="v">'+(k.open_tickets||0)+"</div></div></div>"
+      + '<div class="kpi"><div class="l">未完结异常单</div><div class="v">'+(k.open_tickets||0)+"</div></div>"
+      + '<div class="kpi"><div class="l">暂存待确认</div><div class="v amber">'+(k.staging_pending||0)+"</div></div></div>"
       + '<h3 style="font-size:13.5px;margin-bottom:8px">八域健康度</h3><div class="grid2" style="margin-bottom:16px">'+domains+"</div>"
       + '<div class="card"><h3>今日异常清单</h3><table><tr><th style="width:44px">级别</th><th>异常</th><th style="width:110px">来源</th><th style="width:52px">操作</th></tr>'+(alerts||'<tr><td colspan=4 class="muted">暂无异常 🎉</td></tr>')+"</table></div>";
   }
 
   function price(){
     var q = (D.quotes&&D.quotes.quotes)||{};
+    function chg(v){
+      if (v===null||v===undefined) return '<span style="color:var(--tx3)">-</span>';
+      var c = v>0?"var(--red)":v<0?"var(--green)":"var(--tx2)";
+      return '<span style="color:'+c+'">'+(v>0?"+":"")+v+"%</span>";
+    }
     function rows(arr,unit){
-      return (arr||[]).slice(0,12).map(x=>"<tr><td>"+(x.channel||"-")+'</td><td>'+(x.region||"-")+'</td><td>'+(x.p21||"-")+'</td><td>'+(x.p101||"-")+'</td><td style="color:var(--tx2)">'+(x.updated||"-").slice(0,10)+"</td></tr>").join("");
+      return (arr||[]).slice(0,12).map(x=>"<tr><td>"+(x.channel||"-")+'</td><td>'+(x.region||"-")+'</td><td>'+(x.p21||"-")+"</td><td>"+chg(x.chg21)+'</td><td>'+(x.p101||"-")+"</td><td>"+chg(x.chg101)+'</td><td style="color:var(--tx2)">'+(x.updated||"-").slice(0,10)+"</td></tr>").join("");
     }
     return '<h2 class="pt">价格中心</h2><p class="sub">大货报价最新快照（来源：周报 Base 报价表，带更新日期）· 环比版本对比随管道二期接入</p>'
-      + '<div class="card"><h3>美国空派（¥/kg，21KG+ / 101KG+）</h3><table><tr><th>渠道</th><th>分区</th><th>21KG+</th><th>101KG+</th><th>更新日期</th></tr>'+rows(q.air_us)+"</table></div>"
-      + '<div class="card"><h3>美森海运（¥/kg）</h3><table><tr><th>渠道</th><th>分区</th><th>21KG+</th><th>101KG+</th><th>更新日期</th></tr>'+rows(q.sea_us)+"</table></div>"
+      + '<div class="card"><h3>美国空派（¥/kg，21KG+ / 101KG+）</h3><table><tr><th>渠道</th><th>分区</th><th>21KG+</th><th>环比</th><th>101KG+</th><th>环比</th><th>更新日期</th></tr>'+rows(q.air_us)+"</table></div>"
+      + '<div class="card"><h3>美森海运（¥/kg）</h3><table><tr><th>渠道</th><th>分区</th><th>21KG+</th><th>环比</th><th>101KG+</th><th>环比</th><th>更新日期</th></tr>'+rows(q.sea_us)+"</table></div>"
       + '<div class="card"><h3>英国渠道</h3><table><tr><th>渠道</th><th>生效日</th><th>21kg+</th><th>101kg+</th></tr>'+rows(q.uk)+"</table></div>";
   }
 
@@ -63,7 +69,9 @@ var App = (function(){
     var rows = (D.quality&&D.quality.rows)||[];
     var tr = rows.slice(0,15).map(x=>'<tr><td>'+x.provider+'</td><td>'+x.problems+'</td><td>'+x.closed+'</td><td>'+x.open+"</td><td>"+(x.close_rate||0)+"%</td></tr>").join("");
     var alerts = ((D.kpi&&D.kpi.alerts)||[]).map(a=>'<tr><td style="width:44px">'+pill(a.level)+"</td><td>"+a.text+'</td><td style="width:60px">'+a.rule+"</td></tr>").join("");
+    var stg = ((D.staging&&D.staging.rows)||[]).map(x=>'<tr><td style="width:56px">'+esc(x.no)+'</td><td style="width:44px">'+pill(esc(x.level))+'</td><td>'+esc(x.desc)+'</td><td style="width:60px;color:var(--tx2)">'+esc(x.rule)+'</td><td style="width:76px">'+pill(esc(x.status||"待确认"))+"</td></tr>").join("");
     return '<h2 class="pt">质量与告警中心</h2><p class="sub">异常按物流商聚合（来源：B2C异常问题表）· 逐票工单走跨部门异常单体系</p>'
+      + '<div class="card"><h3>暂存异常（自动发现 · 核对后转登记表）</h3><table><tr><th>编号</th><th>级别</th><th>描述</th><th>规则</th><th>状态</th></tr>'+(stg||'<tr><td colspan=5 class="muted">暂无</td></tr>')+"</table></div>"
       + '<div class="card"><h3>告警历史（A 系列规则触发）</h3><table><tr><th style="width:44px">级别</th><th>告警</th><th style="width:60px">规则</th></tr>'+(alerts||'<tr><td colspan=3 class="muted">暂无</td></tr>')+"</table></div>"
       + '<div class="card"><h3>物流商异常聚合</h3><table><tr><th>物流商</th><th>问题数</th><th>已完结</th><th>未完结</th><th>完结率</th></tr>'+tr+"</table></div>";
   }
@@ -82,8 +90,8 @@ var App = (function(){
   }
 
   async function load(){
-    var rs = await Promise.all([fetchJSON("kpi.json"),fetchJSON("quotes.json"),fetchJSON("xiaobao.json"),fetchJSON("warehouse.json"),fetchJSON("quality.json")]);
-    D.kpi=rs[0]; D.quotes=rs[1]; D.xiaobao=rs[2]; D.warehouse=rs[3]; D.quality=rs[4];
+    var rs = await Promise.all([fetchJSON("kpi.json"),fetchJSON("quotes.json"),fetchJSON("xiaobao.json"),fetchJSON("warehouse.json"),fetchJSON("quality.json"),fetchJSON("staging.json")]);
+    D.kpi=rs[0]; D.quotes=rs[1]; D.xiaobao=rs[2]; D.warehouse=rs[3]; D.quality=rs[4]; D.staging=rs[5];
     document.getElementById("gen-time").textContent = (D.kpi&&D.kpi.generated_at)||"-";
     var fb = document.getElementById("fresh-badge");
     if (D.kpi&&D.kpi.generated_at){ fb.textContent="数据已加载"; fb.className="badge ok"; } else { fb.textContent="数据未加载"; fb.className="badge stale"; }
