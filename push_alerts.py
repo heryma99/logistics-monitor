@@ -2,7 +2,7 @@
 """push_alerts.py — 每日告警摘要推送飞书群（机器人身份）
 群：「物流监控告警」oc_d72d215430964bb9c22be6d60b9c7ec1（bot 为群主）
 """
-import subprocess, json, os
+import subprocess, json, os, sys
 
 NODE = r"C:\Users\cn\.workbuddy\binaries\node\versions\22.22.2\node.exe"
 JS   = r"C:\Users\cn\.workbuddy\binaries\node\versions\22.22.2\node_modules\@larksuite\cli\scripts\run.js"
@@ -10,6 +10,10 @@ CHAT = "oc_d72d215430964bb9c22be6d60b9c7ec1"
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 kpi = json.load(open(os.path.join(HERE, "data", "kpi.json"), encoding="utf-8"))
+_state = os.path.join(HERE, ".push_state")
+_snap = (kpi.get("generated_at") or "")[:16]
+if os.path.exists(_state) and open(_state, encoding="utf-8").read().strip() == _snap:
+    print("PUSH: skipped (already pushed", _snap + ")"); sys.exit(0)
 stg = json.load(open(os.path.join(HERE, "data", "staging.json"), encoding="utf-8")) if os.path.exists(os.path.join(HERE, "data", "staging.json")) else {"rows": []}
 alerts = kpi.get("alerts") or []
 pending = [x for x in stg.get("rows", []) if x.get("status") == "待确认"]
@@ -34,3 +38,4 @@ r = subprocess.run([NODE, JS, "im", "+messages-send", "--as", "bot", "--chat-id"
                    capture_output=True, text=True, encoding="utf-8")
 out = r.stdout[:200]
 print("PUSH:", "OK" if '"ok": true' in out else out)
+if '"ok": true' in out: open(_state, "w").write(_snap)
