@@ -59,7 +59,7 @@ var App = (function(){
     var trend = '<div class="card"><h3>月度趋势（KPI 基线 N3 · 双口径对比）</h3>'
       + '<table><tr><th>月份</th><th>包裹</th><th style="width:24%">口径A 时效内签收率(按包裹加权)</th><th>口径B 线路达标率(按线路)</th><th>线路</th><th>不达标</th></tr>'+tr2+"</table>"
       + (dup?'<p class="muted" style="margin-top:8px">⚠ 数据质量疑点：26-03/04/05 三个月包裹数完全相同（26,729），疑似月度表复制未更新——已列入治理清单，基线以 25-10~26-02 与 26-06/07 为准。</p>':"")
-      + '<p class="muted" style="margin-top:4px">📌 口径拍板：口径A（按包裹加权）当前 92.8%，已近目标 90%；口径B（按线路）当前 64%——A 反映客户体验，B 反映渠道管理覆盖面。建议：北极星用 A、运营考核用 B。待 Hery 确认后写入指标字典。</p>'
+      + '<p class="muted" style="margin-top:4px">📌 口径已定（双轨制，2026-09-10）：北极星 N3 用口径A 按包裹加权（当前 92.8%，客户体验），运营考核用口径B 按线路达标（当前 64%，渠道覆盖面）——已写入指标字典，如需调整随时改。</p>'
       + "</div>";
     return '<h2 class="pt">小包时效达标</h2><p class="sub">口径：时效内签收率 = 时效内签收 ÷ 包裹数；判定 A15（<85% 黄）/ A16（<80% 或超30天>5% 红）· 当前月：26年7月时效表</p>'
       + '<div class="card"><table><tr><th>渠道</th><th>国家</th><th>包裹</th><th>标准(天)</th><th>时效内签收</th><th>超30天占比</th><th>判定</th></tr>'+tr+"</table></div>";
