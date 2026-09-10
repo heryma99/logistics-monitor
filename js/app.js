@@ -57,8 +57,12 @@ var App = (function(){
       var cap = w.ending + w.transit;
       return '<tr><td>'+w.warehouse+'</td><td>'+w.ym+'</td><td>'+w.ending+'</td><td>'+w.transit+'</td><td>'+w.outbound+'</td><td>'+(w.turnover_days||"-")+"</td></tr>";
     }).join("");
+    var fee = (D.fee&&D.fee.rows)||[];
+    var fk = ["0-30天","31-60天","61-90天","91-120天","121-180天","181-270天天","271-360天","360天以上"];
+    var fr = fee.slice(0,10).map(x=>'<tr><td>'+esc(x["海外仓"])+'</td><td>'+esc(x["计费单位"])+'</td><td>'+esc(x["币种"])+'</td>'+fk.map(k=>"<td>"+esc(x[k])+"</td>").join("")+"</tr>").join("");
     return '<h2 class="pt">仓库看板</h2><p class="sub">海外仓库存与周转（东莞6子仓库容数据走人工导入模板，M2 接入）</p>'
-      + '<div class="card"><table><tr><th>仓库</th><th>月份</th><th>期末库存</th><th>在途</th><th>本月出库</th><th>周转天数</th></tr>'+tr+"</table></div>";
+      + '<div class="card"><table><tr><th>仓库</th><th>月份</th><th>期末库存</th><th>在途</th><th>本月出库</th><th>周转天数</th></tr>'+tr+"</table></div>"
+      + '<div class="card"><h3>仓储费计费标准（库龄段，对账基准 · M2 启用核对）</h3><div style="overflow-x:auto"><table><tr><th>海外仓</th><th>计费单位</th><th>币种</th>'+fk.map(k=>"<th>"+k+"</th>").join("")+"</tr>"+fr+"</table></div></div>";
   }
 
   function shell(title, note){
@@ -73,6 +77,18 @@ var App = (function(){
     return '<h2 class="pt">质量与告警中心</h2><p class="sub">异常按物流商聚合（来源：B2C异常问题表）· 逐票工单走跨部门异常单体系</p>'
       + '<div class="card"><h3>暂存异常（自动发现 · 核对后转登记表）</h3><table><tr><th>编号</th><th>级别</th><th>描述</th><th>规则</th><th>状态</th></tr>'+(stg||'<tr><td colspan=5 class="muted">暂无</td></tr>')+"</table></div>"
       + '<div class="card"><h3>告警历史（A 系列规则触发）</h3><table><tr><th style="width:44px">级别</th><th>告警</th><th style="width:60px">规则</th></tr>'+(alerts||'<tr><td colspan=3 class="muted">暂无</td></tr>')+"</table></div>"
+      + (function(){
+          var dd = D.dictionary||{};
+          function pills(list){
+            var clean = (list||[]).filter(x=>x && x.length<=12 && !/^\d{4}\//.test(x));
+            var dirty = (list||[]).length - clean.length;
+            var ps = clean.map(x=>'<span class="pill gray" style="margin:2px">'+esc(x)+"</span>").join("");
+            return ps + (dirty>0?'<p class="muted" style="margin-top:6px">⚠ 检测到 '+dirty+' 个被污染的选项（日期/长文本误存为选项）——已列入月度盘点治理清单</p>':"");
+          }
+          return '<div class="card"><h3>问题类型字典（M2-4 · 取自现有字段选项）</h3>'
+            + '<p class="muted">跟进类型：</p><div>'+pills(dd["跟进类型"])+"</div>"
+            + '<p class="muted" style="margin-top:8px">跟进状态：</p><div>'+pills(dd["跟进状态"])+"</div></div>";
+        })()
       + '<div class="card"><h3>物流商异常聚合</h3><table><tr><th>物流商</th><th>问题数</th><th>已完结</th><th>未完结</th><th>完结率</th></tr>'+tr+"</table></div>";
   }
 
@@ -90,8 +106,8 @@ var App = (function(){
   }
 
   async function load(){
-    var rs = await Promise.all([fetchJSON("kpi.json"),fetchJSON("quotes.json"),fetchJSON("xiaobao.json"),fetchJSON("warehouse.json"),fetchJSON("quality.json"),fetchJSON("staging.json")]);
-    D.kpi=rs[0]; D.quotes=rs[1]; D.xiaobao=rs[2]; D.warehouse=rs[3]; D.quality=rs[4]; D.staging=rs[5];
+    var rs = await Promise.all([fetchJSON("kpi.json"),fetchJSON("quotes.json"),fetchJSON("xiaobao.json"),fetchJSON("warehouse.json"),fetchJSON("quality.json"),fetchJSON("staging.json"),fetchJSON("fee.json"),fetchJSON("dictionary.json")]);
+    D.kpi=rs[0]; D.quotes=rs[1]; D.xiaobao=rs[2]; D.warehouse=rs[3]; D.quality=rs[4]; D.staging=rs[5]; D.fee=rs[6]; D.dictionary=rs[7];
     document.getElementById("gen-time").textContent = (D.kpi&&D.kpi.generated_at)||"-";
     var fb = document.getElementById("fresh-badge");
     if (D.kpi&&D.kpi.generated_at){ fb.textContent="数据已加载"; fb.className="badge ok"; } else { fb.textContent="数据未加载"; fb.className="badge stale"; }
