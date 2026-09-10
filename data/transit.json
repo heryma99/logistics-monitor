@@ -1,0 +1,67 @@
+{
+ "generated_at": "2026-09-10 17:53:55",
+ "source": "周报Base·FBA发货明细(脚本同步)",
+ "today": "2026-09-10",
+ "stats": {
+  "intransit": 3,
+  "delayed": 0,
+  "chaxun": 0,
+  "arrived": 157
+ },
+ "rows": [
+  {
+   "fba": "FBA19HP1YCJ8",
+   "channel": "空派包税",
+   "carrier": "亚丰",
+   "forwarder": null,
+   "dest": "美国",
+   "mode": "空运",
+   "kg": 1794.0,
+   "fee": "102658.0",
+   "atd": "2026/07/17",
+   "eta": null,
+   "ata": null,
+   "customs": null,
+   "check": "",
+   "sync": "2026-09-10",
+   "delay_days": null,
+   "level": "绿"
+  },
+  {
+   "fba": "FBA15M377776",
+   "channel": "海派包税",
+   "carrier": "合联",
+   "forwarder": null,
+   "dest": "沙特",
+   "mode": "海运",
+   "kg": 0,
+   "fee": "2375.0",
+   "atd": "2026/8/10",
+   "eta": null,
+   "ata": null,
+   "customs": null,
+   "check": "",
+   "sync": "2026-09-10",
+   "delay_days": null,
+   "level": "绿"
+  },
+  {
+   "fba": "FBA15GF8J6PY",
+   "channel": "海卡包税",
+   "carrier": "中运通达",
+   "forwarder": null,
+   "dest": "澳大利亚",
+   "mode": "海运",
+   "kg": 0,
+   "fee": "1386.0",
+   "atd": "2026/8/22",
+   "eta": "2026/9/8",
+   "ata": null,
+   "customs": null,
+   "check": "",
+   "sync": "2026-09-10",
+   "delay_days": null,
+   "level": "绿"
+  }
+ ]
+}
