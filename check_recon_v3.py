@@ -165,7 +165,12 @@ for r in ws.iter_rows(min_row=6, values_only=True):
 mode_stat = defaultdict(lambda: {"tickets":0,"kg":0.0,"amount":0.0,"should":0.0,"checked":0,"viol":0,"viol_amt":0.0})
 violations, ver_stat = [], defaultdict(lambda: [0, 0.0])
 no_version = 0
+comp_rows = []  # 赔偿/退费负票单独归档，不进逐票核验
 for t in tickets:
+    if t["amount"] < 0:
+        comp_rows.append({"no": t["no"], "mode": t["mode"], "kg": t["kg"],
+                          "amount": t["amount"], "note": (t.get("fee_note") or "")[:60]})
+        continue
     m = t["mode"]; ms = mode_stat[m]
     ms["tickets"] += 1; ms["kg"] += t["kg"]; ms["amount"] += t["amount"]
     d = pdate(t["recv"])
@@ -279,6 +284,6 @@ out = {"generated_at": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
        "total_amount": total, "checked_total": checked_total,
        "no_version_tickets": no_version,
        "version_usage": {k: {"tickets": v[0], "amount": round(v[1],2)} for k, v in sorted(ver_stat.items())},
-       "rows": mode_rows, "violations": violations}
+       "comp_rows": comp_rows, "rows": mode_rows, "violations": violations}
 json.dump(out, open(os.path.join(DATA, out_name), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 print(f"{out_name}: 覆盖 ¥{checked_total}/{total} ({round(checked_total/total*100)}%) | 差异票 {len(violations)} | 净差异 {round(sum(v['diff'] for v in violations),2)} | 无版本票 {no_version}")
