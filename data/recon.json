@@ -1,17 +1,55 @@
 {
- "generated_at": "2026-09-10 11:34:00",
- "bill": "中运通达 2026年08月对账单 (JW PEI LIMITED, 2026-09-03)",
- "price_version": "价格表Vip 2026-8-25（8月生效版）",
+ "generated_at": "2026-09-10 16:29:34",
+ "bill": "JW PEI LIMITED（2026-09-03）.xlsx (8月)",
+ "price_version": "v3 按收货日期匹配（16 个周版价格表）",
  "total_amount": 686055.62,
  "checked_total": 516608.53,
- "engine": "v1 覆盖3模式（海卡费率带 / UPS两表查表）；其余模式待适配",
+ "no_version_tickets": 0,
+ "version_usage": {
+  "2026-06-09": {
+   "tickets": 1,
+   "amount": 1267.4
+  },
+  "2026-06-30": {
+   "tickets": 4,
+   "amount": 2085.99
+  },
+  "2026-07-14": {
+   "tickets": 2,
+   "amount": 139.94
+  },
+  "2026-07-21": {
+   "tickets": 5,
+   "amount": 14278.83
+  },
+  "2026-07-28": {
+   "tickets": 33,
+   "amount": 50536.76
+  },
+  "2026-08-04": {
+   "tickets": 56,
+   "amount": 230946.24
+  },
+  "2026-08-11": {
+   "tickets": 93,
+   "amount": 230903.74
+  },
+  "2026-08-18": {
+   "tickets": 63,
+   "amount": 71300.61
+  },
+  "2026-08-25": {
+   "tickets": 49,
+   "amount": 84596.11
+  }
+ },
  "rows": [
   {
    "mode": "美国包税海卡(正班)",
    "tickets": 16,
    "chargeable_kg": 33099.0,
    "amount": 474569.2,
-   "should": 474569.2,
+   "should": 455843.7,
    "checked": 16,
    "viol": 2,
    "viol_amt": 18725.5
@@ -51,7 +89,7 @@
    "tickets": 130,
    "chargeable_kg": 267.5,
    "amount": 21527.53,
-   "should": 4677.56,
+   "should": 4594.69,
    "checked": 48,
    "viol": 0,
    "viol_amt": 0.0
@@ -173,20 +211,22 @@
    "mode": "美国包税海卡(正班)",
    "dest": "美国",
    "kg": 3608.0,
+   "recv": "2026-08-28",
    "actual": 65304.8,
    "should": 46723.6,
    "diff": 18581.2,
-   "note": "出费率带"
+   "note": "运费基准差异"
   },
   {
    "no": "FBA19MQS7BMN",
    "mode": "美国包税海卡(正班)",
    "dest": "美国",
    "kg": 39.0,
+   "recv": "2026-08-28",
    "actual": 678.6,
    "should": 534.3,
    "diff": 144.3,
-   "note": "出费率带"
+   "note": "运费基准差异"
   }
  ]
 }
