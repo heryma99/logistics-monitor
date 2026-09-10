@@ -108,7 +108,7 @@ var App = (function(){
 
   function recon(){
     var rc = D.recon||{};
-    var rows = (rc.rows||[]).map(x=>'<tr><td>'+x.mode+'</td><td>'+x.tickets+'</td><td style="color:var(--tx2)">'+(x.should!=null?x.should:"—")+'</td><td style="color:var(--tx)">'+x.amount+'</td><td>'+(x.should!=null?pill(x.viol>0?"黄":"green"):pill("gray"))+(x.should!=null?' <span class="muted">'+x.viol+'票</span>':'')+'</td><td style="color:var(--tx2)">'+(x.viol_amt?(x.viol_amt>0?"+":"")+'+x.viol_amt:'—')+'</td></tr>').join("");
+    var rows = (rc.rows||[]).map(x=>'<tr><td>'+x.mode+'</td><td>'+x.tickets+'</td><td style="color:var(--tx2)">'+(x.should!=null?x.should:"—")+'</td><td style="color:var(--tx)">'+x.amount+'</td><td>'+(x.should!=null?pill(x.viol>0?"黄":"green"):pill("gray"))+(x.should!=null?' <span class="muted">'+x.viol+'票</span>':'')+'</td><td style="color:var(--tx2)">'+(x.viol_amt!=null&&x.viol_amt!=0?(x.viol_amt>0?"+":"")+Math.round(x.viol_amt):'—')+'</td></tr>').join("");
     var viols = (rc.violations||[]).slice(0,15).map(v=>'<tr><td style="color:var(--tx2)">'+(v.no||"").slice(0,18)+'</td><td>'+v.mode+'</td><td>'+v.dest+'</td><td>'+v.kg+'</td><td>'+v.actual+'</td><td style="color:var(--tx2)">'+v.should+'</td><td style="color:'+(v.diff>0?"var(--red)":"var(--green)")+'">'+(v.diff>0?"+":"")+v.diff+'</td><td class="muted">'+(v.note||"查表差异")+'</td></tr>').join("");
     var viol_amt = (rc.violations||[]).reduce((s,x)=>s+x.diff,0);
     return '<h2 class="pt">账单对账</h2><p class="sub">'+(rc.bill||"")+' · 自动抓取解析 · 应扣引擎 v1（覆盖3模式75%金额）· 注意：当前用9-8版价格表核对8月账单，存在版本错位，复核用8-25版进行中</p>'
