@@ -1,0 +1,104 @@
+{
+ "generated_at": "2026-09-10",
+ "bill": "中运通达 2026年08月对账单 (JW PEI LIMITED, 2026-09-03)",
+ "customer": "JW PEI LIMITED",
+ "total_amount": 686055.62,
+ "rows": [
+  {
+   "mode": "美国包税海卡(正班)",
+   "tickets": 16,
+   "chargeable_kg": 33099.0,
+   "amount": 474569.2
+  },
+  {
+   "mode": "欧洲包税(卡航卡派)",
+   "tickets": 1,
+   "chargeable_kg": 3081.0,
+   "amount": 64084.8
+  },
+  {
+   "mode": "加拿大包税卡派(限时达正班)",
+   "tickets": 2,
+   "chargeable_kg": 1243.0,
+   "amount": 22332.5
+  },
+  {
+   "mode": "FEX-广州",
+   "tickets": 77,
+   "chargeable_kg": 147.5,
+   "amount": 22046.2
+  },
+  {
+   "mode": "大陆UPS-红单小货",
+   "tickets": 130,
+   "chargeable_kg": 267.5,
+   "amount": 21527.53
+  },
+  {
+   "mode": "大陆UPS包税(美国)",
+   "tickets": 57,
+   "chargeable_kg": 107.5,
+   "amount": 20511.8
+  },
+  {
+   "mode": "欧洲包税(卡航)",
+   "tickets": 2,
+   "chargeable_kg": 816.0,
+   "amount": 18717.0
+  },
+  {
+   "mode": "日本海运ACP逆算(贴标)",
+   "tickets": 2,
+   "chargeable_kg": 226.0,
+   "amount": 17370.22
+  },
+  {
+   "mode": "欧洲包税空派慢线(普货)",
+   "tickets": 5,
+   "chargeable_kg": 396.0,
+   "amount": 15812.0
+  },
+  {
+   "mode": "英国VAT递延(空运)",
+   "tickets": 1,
+   "chargeable_kg": 41.0,
+   "amount": 1821.8
+  },
+  {
+   "mode": "英国VAT递延(卡航)",
+   "tickets": 1,
+   "chargeable_kg": 56.0,
+   "amount": 1756.55
+  },
+  {
+   "mode": "英国VAT递延(海运)",
+   "tickets": 1,
+   "chargeable_kg": 103.0,
+   "amount": 1645.16
+  },
+  {
+   "mode": "澳洲包税海派(普货)",
+   "tickets": 1,
+   "chargeable_kg": 126.0,
+   "amount": 1386.0
+  },
+  {
+   "mode": "英国VAT递延(海卡)",
+   "tickets": 1,
+   "chargeable_kg": 40.0,
+   "amount": 1267.4
+  },
+  {
+   "mode": "DHL-广州",
+   "tickets": 6,
+   "chargeable_kg": 25.5,
+   "amount": 693.1
+  },
+  {
+   "mode": "无忧代收",
+   "tickets": 3,
+   "chargeable_kg": 3.0,
+   "amount": 514.36
+  }
+ ]
+}
