@@ -1,0 +1,13 @@
+tip: run "lark-cli mail user_mailboxes profile --params '{"user_mailbox_id":"wl02@leading-trade.com"}'" to confirm your email identity
+date                  from                                       mailbox_id              message_id                                subject                                                       
+────────────────────  ─────────────────────────────────────────  ──────────────────────  ────────────────────────────────────────  ──────────────────────────────────────────────────────────────
+2026-09-03T03:56:18Z  ac8 <ac8@vnlin.com>                        wl02@leading-trade.com  aHp3d2diM1dtdnhxd3FkYkxjdCtqSGxFSEVVPQ==  香港合联物流信息科技有限公司 8月 物流运费对账单               
+2026-09-03T03:05:51Z  ac8 <ac8@vnlin.com>                        wl02@leading-trade.com  U0VpUHZabUNoa2tyemVoQ2g4Wnh3eERxWHE0PQ==  回复：广州合联物流信息科技有限公司 6月 7月物流运费对账单      
+2026-08-07T08:18:34Z  ac8 <ac8@vnlin.com>                        wl02@leading-trade.com  MlprdEVmT1hYdXFHTmNKZWtOVUNQcTJkY25zPQ==  广州合联物流信息科技有限公司 6月 7月物流运费对账单            
+2026-08-05T07:52:46Z  ac8 <ac8@vnlin.com>                        wl02@leading-trade.com  aEhSL2RqQTlBVWtzOTdtTUEzbndERlVRNExVPQ==  广州合联物流信息科技有限公司   7月物流运费对账单              
+2026-04-22T08:13:28Z  peter_shi@vnlin.com <peter_shi@vnlin.com>  wl02@leading-trade.com  TGNRWHVlY3JmL1prVFFLYWVoTFJDLzl1emZRPQ==  回复: 香港合联国际控股（集团）有限公司+4月份补收战争附加费账单
+2026-04-16T09:25:03Z  aki@vnlin.com <aki@vnlin.com>              wl02@leading-trade.com  Rks4R0pDOUZQb2taOXM4RkpoVXFieXZrM01JPQ==  香港合联国际控股（集团）有限公司+4月份补收战争附加费账单      
+2026-04-16T06:37:57Z  aki@vnlin.com <aki@vnlin.com>              wl02@leading-trade.com  UTZBTG0zOHU2YnBidUxYdHJXNUxKcTZtZzNNPQ==  隆锦祥商业有限公司-合联对账单20260416补收战争费               
+
+7 message(s)
+tip: read full content: single message use mail +message --mailbox 'wl02@leading-trade.com' --message-id <id>; multiple messages use mail +messages --mailbox 'wl02@leading-trade.com' --message-ids <id1>,<id2>,<id3>
