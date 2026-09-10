@@ -9,6 +9,7 @@ var App = (function(){
   ];
   var D = {}; // data cache
   function fetchJSON(f){ return fetch("data/"+f).then(r=>r.json()).catch(()=>null); }
+  function esc(s){ return String(s==null?"":s); }
 
   function pill(level){ return '<span class="pill '+({红:"red",不达标:"red",黄:"amber",观察:"amber",达标:"green",绿:"green",gray:"gray"}[level]||"gray")+'">'+level+"</span>"; }
 
