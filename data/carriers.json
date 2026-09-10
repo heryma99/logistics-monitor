@@ -1,0 +1,43 @@
+{
+ "generated_at": "2026-09-10 17:10",
+ "carriers": [
+  {
+   "key": "carrier_hl",
+   "carrier": "香港合联",
+   "period": "2026年8月",
+   "total_amount": 24473.0,
+   "tickets": 3,
+   "rows": [
+    {
+     "dest": "沙特",
+     "tickets": 3,
+     "weight": 1138.0,
+     "amount": 24473.0
+    }
+   ]
+  },
+  {
+   "key": "carrier_yilian",
+   "carrier": "广州易连",
+   "period": "2026年8月",
+   "total_amount": 5434.0,
+   "tickets": 18,
+   "rows": [
+    {
+     "dest": "广州→澳洲",
+     "tickets": 18,
+     "amount": 5434.0
+    }
+   ]
+  },
+  {
+   "key": "carrier_dpex",
+   "carrier": "隆锦祥(DPEX澳洲) 8月16-31",
+   "period": "2026-8-16~31",
+   "total_amount": 16367.62,
+   "tickets": 229,
+   "rows": [],
+   "note": "逐票明细已入库，实扣解析验证通过"
+  }
+ ]
+}
