@@ -11,7 +11,7 @@ from collections import defaultdict
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 BILL = os.path.join(HERE, "bills", "JW PEI LIMITED（2026-09-03）.xlsx")
-PRICE = os.path.join(HERE, "bills", "中运通达 价格表Vip（2026-9-8）.xlsx")
+PRICE = os.path.join(HERE, "bills", "中运通达 价格表Vip（2026-8-25）.xlsx")
 
 def num(v):
     try: return float(v)
@@ -24,7 +24,7 @@ tickets = []
 for r in ws.iter_rows(min_row=6, values_only=True):
     if r[0] is None or not str(r[0]).isdigit(): continue
     tickets.append({"mode": str(r[4] or "-"), "dest": str(r[5] or ""), "kg": num(r[10]) or 0.0,
-                    "amount": num(r[11]) or 0.0, "no": str(r[2] or "")})
+                    "amount": num(r[11]) or 0.0, "no": str(r[2] or ""), "note": str(r[13] or "")[:60]})
 
 # ---------- 2) 价格表 ----------
 pw = openpyxl.load_workbook(PRICE, read_only=True, data_only=True)
@@ -142,14 +142,25 @@ for t in tickets:
             should = tbl.get(k2); checked = should is not None
     if should is not None and m not in MODE_BAND:
         ms["checked"] += 1; ms["should"] += should
-        diff = t["amount"] - should
-        tol = max(30, abs(should)*0.03)
+        # v2: 解析费用说明构成项，运费基准=自动计费项，其余(产品附加费等)单列归因
+        import re as _re
+        comps = _re.findall(r'([^;；:：]+)[:：]\s*(-?\d+\.?\d*)', t.get("fee_note") or "")
+        base, surcharges = t["amount"], []
+        for name, amt in comps:
+            n = name.strip()
+            if ("速递" in n or "自动计费" in n or ("运费" in n and "赔偿" not in n)) and abs(num(amt) or 0) >= abs(base)*0.3:
+                base = num(amt)
+            elif num(amt):
+                surcharges.append((n[:16], num(amt)))
+        diff = base - should
+        tol = max(20, abs(should)*0.02)
         if abs(diff) > tol:
             ms["viol"] += 1; ms["viol_amt"] += diff
             if len(violations) < 40:
                 violations.append({"no": t["no"], "mode": m, "dest": t["dest"], "kg": t["kg"],
                                    "actual": t["amount"], "should": round(should,1),
-                                   "diff": round(diff,1)})
+                                   "diff": round(diff,1),
+                                   "note": "运费基准差异 · 附加费:" + json.dumps(surcharges, ensure_ascii=False)[:70]})
 
 # ---------- 4) 输出 ----------
 mode_rows = []
@@ -160,6 +171,7 @@ for m, ms in sorted(mode_stat.items(), key=lambda x: -x[1]["amount"]):
                       "checked": ms["checked"], "viol": ms["viol"], "viol_amt": round(ms["viol_amt"],2)})
 out = {"generated_at": __import__("datetime").datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
        "bill": "中运通达 2026年08月对账单 (JW PEI LIMITED, 2026-09-03)",
+       "price_version": "价格表Vip 2026-8-25（8月生效版）",
        "total_amount": round(sum(ms["amount"] for ms in mode_stat.values()), 2),
        "checked_total": round(sum(ms["amount"] for ms in mode_stat.values() if ms["checked"]), 2),
        "engine": "v1 覆盖3模式（海卡费率带 / UPS两表查表）；其余模式待适配",
