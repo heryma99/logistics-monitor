@@ -32,12 +32,39 @@
   },
   {
    "key": "carrier_dpex",
-   "carrier": "隆锦祥(DPEX澳洲) 8月16-31",
-   "period": "2026-8-16~31",
-   "total_amount": 16367.62,
-   "tickets": 229,
+   "carrier": "隆锦祥(DPEX澳洲) 2026-6-16~30",
+   "period": "2026-6-16~30",
+   "total_amount": 35447.15,
+   "tickets": 464,
    "rows": [],
-   "note": "逐票明细已入库，实扣解析验证通过"
+   "file": "830125(2026-6-16至30=35447.15)账单.xlsx"
+  },
+  {
+   "key": "carrier_dpex",
+   "carrier": "隆锦祥(DPEX澳洲) 2026-7-1~15",
+   "period": "2026-7-1~15",
+   "total_amount": 34641.78,
+   "tickets": 449,
+   "rows": [],
+   "file": "830125(2026-7-1至15=34641.78)账单.xlsx"
+  },
+  {
+   "key": "carrier_dpex",
+   "carrier": "隆锦祥(DPEX澳洲) 2026-7-16~31",
+   "period": "2026-7-16~31",
+   "total_amount": 16087.34,
+   "tickets": 217,
+   "rows": [],
+   "file": "830125(2026-7-16至31=16083.94)账单.xlsx"
+  },
+  {
+   "key": "carrier_dpex",
+   "carrier": "隆锦祥(DPEX澳洲) 2026-8-1~15",
+   "period": "2026-8-1~15",
+   "total_amount": 15207.81,
+   "tickets": 196,
+   "rows": [],
+   "file": "830125(2026-8-1至15=15207.81)账单.xlsx"
   }
  ]
 }
