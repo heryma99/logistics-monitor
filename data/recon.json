@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-09-10 16:29:34",
+ "generated_at": "2026-09-10 16:43:59",
  "bill": "JW PEI LIMITED（2026-09-03）.xlsx (8月)",
  "price_version": "v3 按收货日期匹配（16 个周版价格表）",
  "total_amount": 686055.62,
- "checked_total": 516608.53,
+ "checked_total": 661415.96,
  "no_version_tickets": 0,
  "version_usage": {
   "2026-06-09": {
@@ -59,18 +59,18 @@
    "tickets": 1,
    "chargeable_kg": 3081.0,
    "amount": 64084.8,
-   "should": null,
-   "checked": 0,
-   "viol": 0,
-   "viol_amt": 0.0
+   "should": 53609.4,
+   "checked": 1,
+   "viol": 1,
+   "viol_amt": 10475.4
   },
   {
    "mode": "加拿大包税卡派(限时达正班)",
    "tickets": 2,
    "chargeable_kg": 1243.0,
    "amount": 22332.5,
-   "should": null,
-   "checked": 0,
+   "should": 22332.5,
+   "checked": 2,
    "viol": 0,
    "viol_amt": 0.0
   },
@@ -109,18 +109,18 @@
    "tickets": 2,
    "chargeable_kg": 816.0,
    "amount": 18717.0,
-   "should": null,
-   "checked": 0,
-   "viol": 0,
-   "viol_amt": 0.0
+   "should": 14280.0,
+   "checked": 2,
+   "viol": 2,
+   "viol_amt": 4437.0
   },
   {
    "mode": "日本海运ACP逆算(贴标)",
    "tickets": 2,
    "chargeable_kg": 226.0,
    "amount": 17370.22,
-   "should": null,
-   "checked": 0,
+   "should": 2938.0,
+   "checked": 2,
    "viol": 0,
    "viol_amt": 0.0
   },
@@ -129,38 +129,38 @@
    "tickets": 5,
    "chargeable_kg": 396.0,
    "amount": 15812.0,
-   "should": null,
-   "checked": 0,
-   "viol": 0,
-   "viol_amt": 0.0
+   "should": 15120.0,
+   "checked": 5,
+   "viol": 5,
+   "viol_amt": 692.0
   },
   {
    "mode": "英国VAT递延(空运)",
    "tickets": 1,
    "chargeable_kg": 41.0,
    "amount": 1821.8,
-   "should": null,
-   "checked": 0,
-   "viol": 0,
-   "viol_amt": 0.0
+   "should": 1781.0,
+   "checked": 1,
+   "viol": 1,
+   "viol_amt": -164.0
   },
   {
    "mode": "英国VAT递延(卡航)",
    "tickets": 1,
    "chargeable_kg": 56.0,
    "amount": 1756.55,
-   "should": null,
-   "checked": 0,
-   "viol": 0,
-   "viol_amt": 0.0
+   "should": 1219.2,
+   "checked": 1,
+   "viol": 1,
+   "viol_amt": -112.0
   },
   {
    "mode": "英国VAT递延(海运)",
    "tickets": 1,
    "chargeable_kg": 103.0,
    "amount": 1645.16,
-   "should": null,
-   "checked": 0,
+   "should": 1216.7,
+   "checked": 1,
    "viol": 0,
    "viol_amt": 0.0
   },
@@ -179,8 +179,8 @@
    "tickets": 1,
    "chargeable_kg": 40.0,
    "amount": 1267.4,
-   "should": null,
-   "checked": 0,
+   "should": 668.0,
+   "checked": 1,
    "viol": 0,
    "viol_amt": 0.0
   },
@@ -206,6 +206,116 @@
   }
  ],
  "violations": [
+  {
+   "no": "FBA15M1KJTBX",
+   "mode": "英国VAT递延(卡航)",
+   "dest": "英国",
+   "kg": 56.0,
+   "recv": "2026-07-25",
+   "actual": 1756.55,
+   "should": 1219.2,
+   "diff": -112.0,
+   "note": "附加费:[[\"关税\", 649.35]]"
+  },
+  {
+   "no": "FBA15M1ZTBW4",
+   "mode": "英国VAT递延(空运)",
+   "dest": "英国",
+   "kg": 41.0,
+   "recv": "2026-07-25",
+   "actual": 1821.8,
+   "should": 1781.0,
+   "diff": -164.0,
+   "note": "附加费:[[\"关税\", 204.8]]"
+  },
+  {
+   "no": "FBA15M40FRCJ",
+   "mode": "欧洲包税(卡航卡派)",
+   "dest": "德国",
+   "kg": 3081.0,
+   "recv": "2026-08-11",
+   "actual": 64084.8,
+   "should": 53609.4,
+   "diff": 10475.4,
+   "note": "运费基准差异"
+  },
+  {
+   "no": "FBA15M3ZH9DL",
+   "mode": "欧洲包税(卡航)",
+   "dest": "德国",
+   "kg": 425.0,
+   "recv": "2026-08-11",
+   "actual": 9137.5,
+   "should": 7437.5,
+   "diff": 1700.0,
+   "note": "运费基准差异"
+  },
+  {
+   "no": "FBA15M3ZCZMS",
+   "mode": "欧洲包税空派慢线(普货)",
+   "dest": "德国",
+   "kg": 85.0,
+   "recv": "2026-08-11",
+   "actual": 3625.0,
+   "should": 3272.5,
+   "diff": 352.5,
+   "note": "运费基准差异"
+  },
+  {
+   "no": "FBA15M3LBJ1M",
+   "mode": "欧洲包税空派慢线(普货)",
+   "dest": "德国",
+   "kg": 21.0,
+   "recv": "2026-08-11",
+   "actual": 1003.0,
+   "should": 871.5,
+   "diff": 131.5,
+   "note": "运费基准差异"
+  },
+  {
+   "no": "FBA15M40KS84",
+   "mode": "欧洲包税空派慢线(普货)",
+   "dest": "德国",
+   "kg": 21.0,
+   "recv": "2026-08-11",
+   "actual": 1003.0,
+   "should": 871.5,
+   "diff": 131.5,
+   "note": "运费基准差异"
+  },
+  {
+   "no": "FBA15M409X6Z",
+   "mode": "欧洲包税空派慢线(普货)",
+   "dest": "德国",
+   "kg": 126.0,
+   "recv": "2026-08-11",
+   "actual": 4890.0,
+   "should": 4599.0,
+   "diff": 291.0,
+   "note": "运费基准差异"
+  },
+  {
+   "no": "FBA15M61YF99",
+   "mode": "欧洲包税(卡航)",
+   "dest": "德国",
+   "kg": 391.0,
+   "recv": "2026-08-21",
+   "actual": 9579.5,
+   "should": 6842.5,
+   "diff": 2737.0,
+   "note": "运费基准差异"
+  },
+  {
+   "no": "FBA15M5JX4T9",
+   "mode": "欧洲包税空派慢线(普货)",
+   "dest": "德国",
+   "kg": 143.0,
+   "recv": "2026-08-21",
+   "actual": 5291.0,
+   "should": 5505.5,
+   "diff": -214.5,
+   "note": "运费基准差异"
+  },
   {
    "no": "FBA19MQY4RS0",
    "mode": "美国包税海卡(正班)",
