@@ -107,13 +107,16 @@ var App = (function(){
 
   function recon(){
     var rc = D.recon||{};
-    var rows = (rc.rows||[]).map(x=>'<tr><td>'+x.mode+'</td><td>'+x.tickets+'</td><td>'+x.chargeable_kg+'</td><td style="color:var(--tx)">'+x.amount+'</td><td style="color:var(--tx3)">M2-1 下一步：计费引擎应扣</td></tr>').join("");
-    return '<h2 class="pt">账单对账</h2><p class="sub">实扣侧已接入：'+(rc.bill||"")+' · 自动从 wl02 邮箱抓取解析 · 应扣引擎（对照中运价格表重算）为 M2-1 下一步</p>'
+    var rows = (rc.rows||[]).map(x=>'<tr><td>'+x.mode+'</td><td>'+x.tickets+'</td><td style="color:var(--tx2)">'+(x.should!=null?x.should:"—")+'</td><td style="color:var(--tx)">'+x.amount+'</td><td>'+(x.should!=null?pill(x.viol>0?"黄":"green"):pill("gray"))+(x.should!=null?' <span class="muted">'+x.viol+'票</span>':'')+'</td><td style="color:var(--tx2)">'+(x.viol_amt?(x.viol_amt>0?"+":"")+'+x.viol_amt:'—')+'</td></tr>').join("");
+    var viols = (rc.violations||[]).slice(0,15).map(v=>'<tr><td style="color:var(--tx2)">'+(v.no||"").slice(0,18)+'</td><td>'+v.mode+'</td><td>'+v.dest+'</td><td>'+v.kg+'</td><td>'+v.actual+'</td><td style="color:var(--tx2)">'+v.should+'</td><td style="color:'+(v.diff>0?"var(--red)":"var(--green)")+'">'+(v.diff>0?"+":"")+v.diff+'</td><td class="muted">'+(v.note||"查表差异")+'</td></tr>').join("");
+    var viol_amt = (rc.violations||[]).reduce((s,x)=>s+x.diff,0);
+    return '<h2 class="pt">账单对账</h2><p class="sub">'+(rc.bill||"")+' · 自动抓取解析 · 应扣引擎 v1（覆盖3模式75%金额）· 注意：当前用9-8版价格表核对8月账单，存在版本错位，复核用8-25版进行中</p>'
       + '<div class="kpis"><div class="kpi"><div class="l">账单总额（实扣）</div><div class="v">¥'+(rc.total_amount||0)+'</div></div>'
-      + '<div class="kpi"><div class="l">票数</div><div class="v">'+((rc.rows||[]).reduce((s,x)=>s+x.tickets,0))+'</div></div>'
-      + '<div class="kpi"><div class="l">差异（待应扣引擎）</div><div class="v amber">待算</div></div>'
-      + '<div class="kpi"><div class="l">已追回</div><div class="v green">0</div></div></div>'
-      + '<div class="card"><h3>按运输方式汇总（实扣）</h3><table><tr><th>运输方式</th><th>票数</th><th>计费重(kg)</th><th>金额(元)</th><th>应扣核对</th></tr>'+rows+"</table></div>";
+      + '<div class="kpi"><div class="l">引擎覆盖</div><div class="v">¥'+(rc.checked_total||0)+'</div></div>'
+      + '<div class="kpi"><div class="l">差异票</div><div class="v amber">'+(rc.violations||[]).length+'</div></div>'
+      + '<div class="kpi"><div class="l">差异净额</div><div class="v amber">'+(viol_amt>0?"+":"")+Math.round(viol_amt)+'</div></div></div>'
+      + '<div class="card"><h3>按运输方式汇总（应扣引擎核对）</h3><table><tr><th>运输方式</th><th>票数</th><th>应扣(参考)</th><th>实扣(元)</th><th>核对</th><th>差异额</th></tr>'+rows+"</table></div>"
+      + '<div class="card"><h3>差异票明细（Top15）</h3><table><tr><th>单号</th><th>运输方式</th><th>目的国</th><th>计费重</th><th>实扣</th><th>应扣参考</th><th>差异</th><th>备注</th></tr>'+viols+"</table></div>";
   }
   function transit(){ return shell("在途监控","M3 上线：批次台账 + 云途轨迹订阅（14 节点归因）"); }
   function compliance(){ return shell("合规中心","M2/M3 上线：证照到期倒计时 + 退税匹配（接物流新政策跟进表）"); }
