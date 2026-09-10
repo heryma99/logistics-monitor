@@ -24,7 +24,7 @@ tickets = []
 for r in ws.iter_rows(min_row=6, values_only=True):
     if r[0] is None or not str(r[0]).isdigit(): continue
     tickets.append({"mode": str(r[4] or "-"), "dest": str(r[5] or ""), "kg": num(r[10]) or 0.0,
-                    "amount": num(r[11]) or 0.0, "no": str(r[2] or ""), "note": str(r[13] or "")[:60]})
+                    "amount": num(r[11]) or 0.0, "no": str(r[2] or ""), "fee_note": str(r[13] or "")})
 
 # ---------- 2) 价格表 ----------
 pw = openpyxl.load_workbook(PRICE, read_only=True, data_only=True)
@@ -122,7 +122,7 @@ for t in tickets:
                 ms["checked"] += 1; ms["should"] += t["amount"]  # 带内视为应扣=实扣
                 diff = t["amount"] - should
                 ms["viol"] += 1; ms["viol_amt"] += diff
-                if len(violations) < 40:
+                if True:
                     violations.append({"no": t["no"], "mode": m, "dest": t["dest"], "kg": t["kg"],
                                        "actual": t["amount"], "should": round(should,1),
                                        "diff": round(diff,1), "note": "出费率带"})
@@ -156,7 +156,7 @@ for t in tickets:
         tol = max(20, abs(should)*0.02)
         if abs(diff) > tol:
             ms["viol"] += 1; ms["viol_amt"] += diff
-            if len(violations) < 40:
+            if True:
                 violations.append({"no": t["no"], "mode": m, "dest": t["dest"], "kg": t["kg"],
                                    "actual": t["amount"], "should": round(should,1),
                                    "diff": round(diff,1),
