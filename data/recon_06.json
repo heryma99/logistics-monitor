@@ -1,0 +1,152 @@
+{
+ "generated_at": "2026-09-10 14:57:08",
+ "bill": "JW PEI LIMITED（2026-07-01）.xlsx",
+ "price_version": "中运通达 价格表Vip（2026-6-23）.xlsx",
+ "total_amount": 290560.89,
+ "checked_total": 112303.81,
+ "engine": "v1 覆盖3模式（海卡费率带 / UPS两表查表）；其余模式待适配",
+ "rows": [
+  {
+   "mode": "欧洲包税空派(普货)",
+   "tickets": 4,
+   "chargeable_kg": 1445.0,
+   "amount": 85216.5,
+   "should": null,
+   "checked": 0,
+   "viol": 0,
+   "viol_amt": 0.0
+  },
+  {
+   "mode": "美国包税海卡(正班)",
+   "tickets": 7,
+   "chargeable_kg": 5082.0,
+   "amount": 67345.8,
+   "should": 67345.8,
+   "checked": 7,
+   "viol": 0,
+   "viol_amt": 0.0
+  },
+  {
+   "mode": "大陆UPS-红单小货",
+   "tickets": 171,
+   "chargeable_kg": 351.5,
+   "amount": 26382.32,
+   "should": 9491.63,
+   "checked": 68,
+   "viol": 0,
+   "viol_amt": 0.0
+  },
+  {
+   "mode": "FEX-广州",
+   "tickets": 103,
+   "chargeable_kg": 150.0,
+   "amount": 25822.58,
+   "should": null,
+   "checked": 0,
+   "viol": 0,
+   "viol_amt": 0.0
+  },
+  {
+   "mode": "DHL-广州",
+   "tickets": 17,
+   "chargeable_kg": 372.0,
+   "amount": 21574.09,
+   "should": null,
+   "checked": 0,
+   "viol": 0,
+   "viol_amt": 0.0
+  },
+  {
+   "mode": "大陆UPS包税(美国)",
+   "tickets": 44,
+   "chargeable_kg": 71.0,
+   "amount": 18575.69,
+   "should": 16994.41,
+   "checked": 44,
+   "viol": 1,
+   "viol_amt": 20.59
+  },
+  {
+   "mode": "日本海运ACP逆算(贴标)",
+   "tickets": 2,
+   "chargeable_kg": 201.0,
+   "amount": 13827.02,
+   "should": null,
+   "checked": 0,
+   "viol": 0,
+   "viol_amt": 0.0
+  },
+  {
+   "mode": "欧洲包税(海运)",
+   "tickets": 1,
+   "chargeable_kg": 632.0,
+   "amount": 13651.2,
+   "should": null,
+   "checked": 0,
+   "viol": 0,
+   "viol_amt": 0.0
+  },
+  {
+   "mode": "美国包税空派(普货)",
+   "tickets": 1,
+   "chargeable_kg": 79.0,
+   "amount": 6268.0,
+   "should": null,
+   "checked": 0,
+   "viol": 0,
+   "viol_amt": 0.0
+  },
+  {
+   "mode": "英国VAT递延(空运)",
+   "tickets": 1,
+   "chargeable_kg": 113.0,
+   "amount": 6145.94,
+   "should": null,
+   "checked": 0,
+   "viol": 0,
+   "viol_amt": 0.0
+  },
+  {
+   "mode": "英国VAT递延(卡航)",
+   "tickets": 2,
+   "chargeable_kg": 175.0,
+   "amount": 4337.14,
+   "should": null,
+   "checked": 0,
+   "viol": 0,
+   "viol_amt": 0.0
+  },
+  {
+   "mode": "加拿大包税卡派(限时达正班)",
+   "tickets": 1,
+   "chargeable_kg": 41.0,
+   "amount": 779.0,
+   "should": null,
+   "checked": 0,
+   "viol": 0,
+   "viol_amt": 0.0
+  },
+  {
+   "mode": "无忧代收",
+   "tickets": 2,
+   "chargeable_kg": 2.0,
+   "amount": 635.61,
+   "should": null,
+   "checked": 0,
+   "viol": 0,
+   "viol_amt": 0.0
+  }
+ ],
+ "violations": [
+  {
+   "no": "18036011-1870085-54",
+   "mode": "大陆UPS包税(美国)",
+   "dest": "美国",
+   "kg": 3.0,
+   "actual": 536.86,
+   "should": 486.3,
+   "diff": 20.6,
+   "note": "运费基准差异 · 附加费:[[\"产品附加费\", 30.0]]"
+  }
+ ]
+}
