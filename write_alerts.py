@@ -40,7 +40,7 @@ while True:
     names = {f["id"]: f["name"] for f in fl["data"]["fields"]}
     for row in dd.get("data") or []:
         rec = {names.get(fid, fid): v for fid, v in zip(fids, row)}
-        key = (rec.get("来源规则编号") or "", rec.get("异常描述") or "", str(rec.get("数据快照日期") or "")[:10])
+        key = (rec.get("来源规则编号") or "", rec.get("异常描述") or "")
         existing.add(key)
     if not dd.get("has_more"): break
     pt = dd.get("page_token")
@@ -48,7 +48,7 @@ while True:
 
 new_rows, skipped = [], 0
 for a in alerts:
-    key = (a.get("rule"), a.get("text"), snap)
+    key = (a.get("rule"), a.get("text"))
     if key in existing:
         skipped += 1
         continue
