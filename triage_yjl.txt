@@ -1,0 +1,27 @@
+tip: run "lark-cli mail user_mailboxes profile --params '{"user_mailbox_id":"wl02@leading-trade.com"}'" to confirm your email identity
+date                  from                                 mailbox_id              message_id                                subject                                                                                             
+────────────────────  ───────────────────────────────────  ──────────────────────  ────────────────────────────────────────  ────────────────────────────────────────────────────────────────────────────────────────────────────
+2026-09-10T07:26:08Z  邹林园 <zlyuan@jwpei.co>             wl02@leading-trade.com  Um5sUm9PU1JoY1BtM01lMFJXVFl4eFU0M0FBPQ==  Fw:费用清单# Air shpt STR#9 - JW PEI Garments From China to UAE By Air - SM113STR11N9               
+2026-09-10T02:12:42Z  邹林园 <zlyuan@jwpei.co>             wl02@leading-trade.com  eEZRTkcwUFA1ZTJXS1cxVXpxdVI0ZFlhbXA0PQ==  Fw:费用清单# Air shpt STR#9 - JW PEI Garments From China to UAE By Air - SM113STR11N9               
+2026-09-07T10:13:10Z  jieyoupost <jieyoupost@foxmail.com>  wl02@leading-trade.com  MW9wQ01OYUswR09nTW4zcGh1dnQ3aXgxUXFFPQ==  捷邮8月份下旬账单                                                                                   
+2026-09-03T02:52:15Z  Lan <can.acc5@dpex.com.cn>           wl02@leading-trade.com  Z1ZTQTU0YW1wbHNnckpJeWNKUjBtMjRvcEFvPQ==  830125深圳隆锦祥账单---------2026-8月16至31                                                         
+2026-09-03T02:43:29Z  梁锦晴 <windy@elianpost.com>         wl02@leading-trade.com  azhESWdsY1hJbkd0NzdLL0ZxaHBCR25QaVpzPQ==  202608月广州易连-隆锦祥LJXSY对账单.xlsx                                                             
+2026-08-28T10:04:21Z  Lan <can.acc5@dpex.com.cn>           wl02@leading-trade.com  S3krSUM5MVExNXBqK3cvbDlkNmRjMGwzYzJ3PQ==  答复: 830125深圳隆锦祥账单---------2026-8月1至15                                                    
+2026-08-26T02:23:10Z  邹林园 <zlyuan@jwpei.co>             wl02@leading-trade.com  RE96TzBUN1Fuc3dZanBNREtieWF1aU5MUGZrPQ==  Fw:Re: Re:          Pick-up request - JW PEI- PO848948+PO851126 - [FOB]-1932743&amp;1982584  GZAE268…
+2026-08-22T01:54:54Z  jieyoupost <jieyoupost@foxmail.com>  wl02@leading-trade.com  T3QzVnMyc0hnak1WTVFxT0ZUODluL2xJNUNVPQ==  捷邮8月上旬账单+海外仓费用明细                                                                      
+2026-08-21T08:08:59Z  邹林园 <zlyuan@jwpei.co>             wl02@leading-trade.com  Ung4akhyYXhZTjQwUzV5TUxjZDI4NncvNEprPQ==  Fw:RE: Re:Billing GCA Maersk L&amp;S Billing for shipperJW PEI AP LIMITED Consignee: GBASOSPLC0HQ on…
+2026-08-21T07:31:28Z  jieyoupost <jieyoupost@foxmail.com>  wl02@leading-trade.com  UE9YQk1GMFVjZFFVTmdTUG13M1VVeTRqdmRJPQ==  捷邮8月上旬账单                                                                                     
+2026-08-21T01:16:03Z  邹林园 <zlyuan@jwpei.co>             wl02@leading-trade.com  bldTOVR2LzcvMm5GMlZONGp0VkkyVENmcncwPQ==  Fw:Re: Re:         Pick-up request - JW PEI- PO848948+PO851126 - [FOB]-1932743&amp;1982584  GZAE2680…
+2026-08-18T03:58:41Z  Lan <can.acc5@dpex.com.cn>           wl02@leading-trade.com  SWd5Qk53ald1UkJ0blBEcFVJRFBrd25hbCs0PQ==  830125深圳隆锦祥账单---------2026-8月1至15                                                          
+2026-08-10T07:18:33Z  梁锦晴 <windy@elianpost.com>         wl02@leading-trade.com  WFo0N0FvT2FOR3hTOFE3bXdUMGVtbWpaVnJBPQ==  账单更新，202607月广州易连-隆锦祥LJXSY对账单.xlsx                                                   
+2026-08-07T08:18:34Z  ac8 <ac8@vnlin.com>                  wl02@leading-trade.com  MlprdEVmT1hYdXFHTmNKZWtOVUNQcTJkY25zPQ==  广州合联物流信息科技有限公司 6月 7月物流运费对账单                                                  
+2026-08-07T01:51:01Z  邹林园 <zlyuan@jwpei.co>             wl02@leading-trade.com  VCs3YmFudFhLT29KU1pvQVZsMDk2WWNlSzlnPQ==  Fw:RE: Re:Billing GCA Maersk L&amp;S Billing for shipperJW PEI AP LIMITED Consignee: GBASOSPLC0HQ on…
+2026-08-05T07:52:46Z  ac8 <ac8@vnlin.com>                  wl02@leading-trade.com  aEhSL2RqQTlBVWtzOTdtTUEzbndERlVRNExVPQ==  广州合联物流信息科技有限公司   7月物流运费对账单                                                    
+2026-08-05T03:44:05Z  Lan <can.acc5@dpex.com.cn>           wl02@leading-trade.com  OE1ReFlZNGJWMUhWY2FUT2NxQ0lzWmhpQmlNPQ==  830125深圳隆锦祥账单---------2026-7月16至31                                                         
+2026-08-04T02:36:13Z  梁锦晴 <windy@elianpost.com>         wl02@leading-trade.com  UFRjM1pHRmE1WUZlckFvSnJ4RnFleWc4dmVzPQ==  202607月广州易连-隆锦祥LJXSY对账单.xlsx                                                             
+2026-08-03T10:25:13Z  jieyoupost <jieyoupost@foxmail.com>  wl02@leading-trade.com  YWV3bFBZWE12aTFDTXRrOEFtdStUM3RuR2NNPQ==  捷邮7月下旬账单                                                                                     
+2026-07-31T02:28:20Z  邹林园 <zlyuan@jwpei.co>             wl02@leading-trade.com  VksvaEtkMHYva0xVM0M1MlZSbEJtaXJhSTNnPQ==  Fw:RE: Re:Billing GCA Maersk L&amp;S Billing for shipperJW PEI AP LIMITED Consignee: GBASOSPLC0HQ on…
+
+20 message(s)
+next page: mail +triage --mailbox 'wl02@leading-trade.com' --query '隆锦祥' --page-token 'search:41a2aa475c08d9a0'
+tip: read full content: single message use mail +message --mailbox 'wl02@leading-trade.com' --message-id <id>; multiple messages use mail +messages --mailbox 'wl02@leading-trade.com' --message-ids <id1>,<id2>,<id3>
