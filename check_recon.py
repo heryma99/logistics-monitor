@@ -10,8 +10,10 @@ import openpyxl
 from collections import defaultdict
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-BILL = os.path.join(HERE, "bills", "JW PEI LIMITED（2026-09-03）.xlsx")
-PRICE = os.path.join(HERE, "bills", "中运通达 价格表Vip（2026-8-25）.xlsx")
+import sys as _sys
+BILL = os.path.join(HERE, "bills", _sys.argv[1] if len(_sys.argv) > 1 else "JW PEI LIMITED（2026-09-03）.xlsx")
+PRICE = os.path.join(HERE, "bills", _sys.argv[2] if len(_sys.argv) > 2 else "中运通达 价格表Vip（2026-8-25）.xlsx")
+OUTNAME = _sys.argv[3] if len(_sys.argv) > 3 else "recon.json"
 
 def num(v):
     try: return float(v)
@@ -170,13 +172,13 @@ for m, ms in sorted(mode_stat.items(), key=lambda x: -x[1]["amount"]):
                       "should": round(ms["should"],2) if ms["checked"] else None,
                       "checked": ms["checked"], "viol": ms["viol"], "viol_amt": round(ms["viol_amt"],2)})
 out = {"generated_at": __import__("datetime").datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-       "bill": "中运通达 2026年08月对账单 (JW PEI LIMITED, 2026-09-03)",
-       "price_version": "价格表Vip 2026-8-25（8月生效版）",
+       "bill": os.path.basename(BILL),
+       "price_version": os.path.basename(PRICE),
        "total_amount": round(sum(ms["amount"] for ms in mode_stat.values()), 2),
        "checked_total": round(sum(ms["amount"] for ms in mode_stat.values() if ms["checked"]), 2),
        "engine": "v1 覆盖3模式（海卡费率带 / UPS两表查表）；其余模式待适配",
        "rows": mode_rows, "violations": violations}
-json.dump(out, open(os.path.join(HERE, "data", "recon.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+json.dump(out, open(os.path.join(HERE, "data", OUTNAME), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 cov_amt = out["checked_total"]
 print(f"覆盖模式金额: ¥{cov_amt} / 总 ¥{out['total_amount']} ({round(cov_amt/out['total_amount']*100)}%)")
 print(f"差异票: {sum(ms['viol'] for ms in mode_stat.values())} | 差异金额: {round(sum(ms['viol_amt'] for ms in mode_stat.values()),2)}")
