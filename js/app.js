@@ -122,7 +122,7 @@ var App = (function(){
           var rs = (D.reconSummary&&D.reconSummary.months)||[];
           var tr = rs.map(x=>'<tr><td>'+x.month+'</td><td>¥'+x.total+'</td><td>'+x.coverage+'%</td><td>'+x.viol+'</td><td style="color:'+(x.pos>0?"var(--red)":"var(--tx2)")+'">'+(x.pos||"0")+'</td><td style="color:var(--tx2)">'+(x.neg||"0")+'</td><td style="color:'+(x.net>0?"var(--red)":"var(--green)")+'">'+x.net+'</td><td class="muted">'+x.pv+"</td></tr>").join("");
           return '<div class="card"><h3>历史核验汇总（中运通达 · 逐月）</h3><table><tr><th>账期</th><th>账单总额</th><th>引擎覆盖</th><th>差异票</th><th>正差异</th><th>负差异(退费/赔偿)</th><th>净差异</th><th>核验用价格表</th></tr>'+tr+"</table>"
-            + '<p class="muted" style="margin-top:6px">5月高差异主因：整月横跨多个周版价格表而 v2 用单一版本核验——v3 将按每票收货日期匹配当周生效版本。</p></div>";
+            + '<p class="muted" style="margin-top:6px">5月高差异主因：整月横跨多个周版价格表而 v2 用单一版本核验——v3 已按每票收货日期匹配当周生效版本。</p></div>';
         })();
   }
   function transit(){ return shell("在途监控","M3 上线：批次台账 + 云途轨迹订阅（14 节点归因）"); }
