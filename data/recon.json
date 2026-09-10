@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-09-10 16:43:59",
+ "generated_at": "2026-09-10 16:58:25",
  "bill": "JW PEI LIMITED（2026-09-03）.xlsx (8月)",
  "price_version": "v3 按收货日期匹配（16 个周版价格表）",
- "total_amount": 686055.62,
+ "total_amount": 686430.62,
  "checked_total": 661415.96,
  "no_version_tickets": 0,
  "version_usage": {
@@ -31,8 +31,8 @@
    "amount": 230946.24
   },
   "2026-08-11": {
-   "tickets": 93,
-   "amount": 230903.74
+   "tickets": 92,
+   "amount": 231278.74
   },
   "2026-08-18": {
    "tickets": 63,
@@ -43,6 +43,15 @@
    "amount": 84596.11
   }
  },
+ "comp_rows": [
+  {
+   "no": "SZLJXSY20260808",
+   "mode": "无忧代收",
+   "kg": 1.0,
+   "amount": -375.0,
+   "note": "运费赔偿\r\n:-375.00(2026.8.8带卡板装货遗失卡板15个*25/个);"
+  }
+ ],
  "rows": [
   {
    "mode": "美国包税海卡(正班)",
@@ -185,20 +194,20 @@
    "viol_amt": 0.0
   },
   {
-   "mode": "DHL-广州",
-   "tickets": 6,
-   "chargeable_kg": 25.5,
-   "amount": 693.1,
+   "mode": "无忧代收",
+   "tickets": 2,
+   "chargeable_kg": 2.0,
+   "amount": 889.36,
    "should": null,
    "checked": 0,
    "viol": 0,
    "viol_amt": 0.0
   },
   {
-   "mode": "无忧代收",
-   "tickets": 3,
-   "chargeable_kg": 3.0,
-   "amount": 514.36,
+   "mode": "DHL-广州",
+   "tickets": 6,
+   "chargeable_kg": 25.5,
+   "amount": 693.1,
    "should": null,
    "checked": 0,
    "viol": 0,
