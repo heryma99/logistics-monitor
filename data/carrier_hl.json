@@ -1,0 +1,14 @@
+{
+ "carrier": "香港合联",
+ "period": "2026年8月",
+ "customer": "隆锦祥商业有限公司",
+ "total_amount": 24473.0,
+ "rows": [
+  {
+   "dest": "沙特",
+   "tickets": 3,
+   "weight": 1138.0,
+   "amount": 24473.0
+  }
+ ]
+}
