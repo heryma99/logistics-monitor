@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-09-09 18:37:44",
+ "generated_at": "2026-09-10 09:20:09",
  "today_alerts": 45,
  "open_tickets": 44.0,
- "staging_pending": 10,
+ "staging_pending": 20,
  "overdue_lanes": 45,
  "channels_total": 120,
  "channels_ok": 75,
@@ -47,7 +47,7 @@
   {
    "name": "数据域",
    "level": "green",
-   "note": "快照 2026-09-09 18:37:44"
+   "note": "快照 2026-09-10 09:20:09"
   }
  ],
  "alerts": [
