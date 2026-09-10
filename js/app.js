@@ -47,7 +47,20 @@ var App = (function(){
   function xiaobao(){
     var rows = (D.xiaobao&&D.xiaobao.rows)||[];
     var tr = rows.slice(0,40).map(x=>'<tr><td'+(x.status==="不达标"?' style="color:var(--red);font-weight:500"':x.status==="观察"?' style="color:var(--amber)"':'')+">"+x.channel+'</td><td>'+x.country+'</td><td>'+x.pkg+'</td><td>'+(x.std_days||"-")+'</td><td style="color:'+(x.ontime_rate<80?"var(--red)":x.ontime_rate<85?"var(--amber)":"var(--green)")+'">'+x.ontime_rate+"%</td><td>"+x.over30_rate+"%</td><td>"+pill(x.status)+"</td></tr>").join("");
-    return '<h2 class="pt">小包时效达标</h2><p class="sub">口径：时效内签收率 = 时效内签收 ÷ 包裹数；判定 A15（<85% 黄）/ A16（<80% 或超30天>5% 红）· 数据源：26年7月时效表</p>'
+    var bl = (D.baseline&&D.baseline.baseline)||[];
+    var suspicious = bl.filter(b=>b.pkg>0).map(b=>b.pkg);
+    var dup = suspicious.length>2 && suspicious.filter(v=>v===suspicious[1]).length>=2;
+    var tr2 = bl.map(b=>{
+      var color = b.ontime_rate<85?"var(--red)":b.ontime_rate<90?"var(--amber)":"var(--green)";
+      return '<tr><td style="width:56px">'+b.month+'</td><td>'+b.pkg+'</td>'
+        + '<td><div class="bar"><i style="width:'+Math.min(100,b.ontime_rate)+'%;background:'+color+'"></i></div></td>'
+        + '<td style="color:'+color+'">'+b.ontime_rate+"%</td><td>"+b.lanes+'</td><td style="color:'+(b.bad_lanes>50?"var(--amber)":"var(--tx2)")+'">'+b.bad_lanes+"</td></tr>";
+    }).join("");
+    var trend = '<div class="card"><h3>月度趋势（KPI 基线 N3 · 时效内签收率 / 不达标线路数）</h3>'
+      + '<table><tr><th>月份</th><th>包裹</th><th style="width:30%">时效内签收率</th><th>比率</th><th>线路</th><th>不达标</th></tr>'+tr2+"</table>"
+      + (dup?'<p class="muted" style="margin-top:8px">⚠ 数据质量疑点：26-03/04/05 三个月包裹数完全相同（26,729），疑似月度表复制未更新——已列入治理清单，基线以 25-10~26-02 与 26-06/07 为准。</p>':"")
+      + "</div>";
+    return '<h2 class="pt">小包时效达标</h2><p class="sub">口径：时效内签收率 = 时效内签收 ÷ 包裹数；判定 A15（<85% 黄）/ A16（<80% 或超30天>5% 红）· 当前月：26年7月时效表</p>'
       + '<div class="card"><table><tr><th>渠道</th><th>国家</th><th>包裹</th><th>标准(天)</th><th>时效内签收</th><th>超30天占比</th><th>判定</th></tr>'+tr+"</table></div>";
   }
 
@@ -106,8 +119,8 @@ var App = (function(){
   }
 
   async function load(){
-    var rs = await Promise.all([fetchJSON("kpi.json"),fetchJSON("quotes.json"),fetchJSON("xiaobao.json"),fetchJSON("warehouse.json"),fetchJSON("quality.json"),fetchJSON("staging.json"),fetchJSON("fee.json"),fetchJSON("dictionary.json")]);
-    D.kpi=rs[0]; D.quotes=rs[1]; D.xiaobao=rs[2]; D.warehouse=rs[3]; D.quality=rs[4]; D.staging=rs[5]; D.fee=rs[6]; D.dictionary=rs[7];
+    var rs = await Promise.all([fetchJSON("kpi.json"),fetchJSON("quotes.json"),fetchJSON("xiaobao.json"),fetchJSON("warehouse.json"),fetchJSON("quality.json"),fetchJSON("staging.json"),fetchJSON("fee.json"),fetchJSON("dictionary.json"),fetchJSON("baseline.json")]);
+    D.kpi=rs[0]; D.quotes=rs[1]; D.xiaobao=rs[2]; D.warehouse=rs[3]; D.quality=rs[4]; D.staging=rs[5]; D.fee=rs[6]; D.dictionary=rs[7]; D.baseline=rs[8];
     document.getElementById("gen-time").textContent = (D.kpi&&D.kpi.generated_at)||"-";
     var fb = document.getElementById("fresh-badge");
     if (D.kpi&&D.kpi.generated_at){ fb.textContent="数据已加载"; fb.className="badge ok"; } else { fb.textContent="数据未加载"; fb.className="badge stale"; }
