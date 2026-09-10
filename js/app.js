@@ -130,8 +130,25 @@ var App = (function(){
             + '<p class="muted" style="margin-top:6px">5月高差异主因：整月横跨多个周版价格表而 v2 用单一版本核验——v3 已按每票收货日期匹配当周生效版本。</p></div>';
         })();
   }
-  function transit(){ return shell("在途监控","M3 上线：批次台账 + 云途轨迹订阅（14 节点归因）"); }
-  function compliance(){ return shell("合规中心","M2/M3 上线：证照到期倒计时 + 退税匹配（接物流新政策跟进表）"); }
+  function transit(){
+    var st = (D.transit&&D.transit.stats)||{};
+    var rows = (D.transit&&D.transit.rows)||[];
+    var tr = rows.map(x=>'<tr><td style="width:44px">'+pill(x.level||"灰")+'</td><td>'+esc(x.fba)+'</td><td>'+esc(x.channel||"-")+'</td><td style="color:var(--tx2)">'+esc(x.carrier||"-")+'</td><td>'+esc(x.dest||"-")+'</td><td style="color:var(--tx2)">'+esc(x.atd||"-")+'</td><td>'+esc(x.eta||"-")+'</td><td style="color:'+(x.delay_days>0?"var(--red)":"var(--tx2)")+'">'+(x.delay_days!=null&&x.delay_days>0?("+ "+x.delay_days+" 天"):(x.ata?"已签收":"在途"))+'</td><td>'+((x.check||"").indexOf("是")>=0?pill("红"):"—")+"</td></tr>").join("");
+    return '<h2 class="pt">在途监控 · FBA 线</h2><p class="sub">ATD 已发出未签收的货件 · 延误=ETA 已过 · 查验票自动标红 · 数据源：FBA发货明细（脚本同步，快照 '+((D.transit&&D.transit.generated_at)||"")+'）</p>'
+      + '<div class="kpis">'
+      + '<div class="kpi"><div class="l">在途批次</div><div class="v">'+(st.intransit||0)+'</div></div>'
+      + '<div class="kpi"><div class="l">ETA 已超</div><div class="v amber">'+(st.delayed||0)+'</div></div>'
+      + '<div class="kpi"><div class="l">查验</div><div class="v red">'+(st.chaxun||0)+'</div></div>'
+      + '<div class="kpi"><div class="l">已签收</div><div class="v green">'+(st.arrived||0)+'</div></div></div>'
+      + '<div class="card"><table><tr><th>状态</th><th>FBA 货件号</th><th>渠道</th><th>物流商</th><th>目的国</th><th>ATD</th><th>ETA</th><th>时效</th><th>查验</th></tr>'+tr+"</table></div>"
+      + '<p class="muted">半月账单/DPEX 线与云途轨迹 API（逐票 14 节点归因）按台账 M3 接入。</p>';
+  }
+  function compliance(){
+    var rows = (D.compliance&&D.compliance.rows)||[];
+    var tr = rows.map(x=>'<tr><td style="width:44px">'+pill(x.level||"灰")+'</td><td>'+esc(x.todo)+'</td><td style="width:80px;color:var(--tx2)">'+esc(x.deadline||"-")+'</td><td style="width:70px">'+(x.days_left!=null?x.days_left+" 天":"-")+'</td><td style="width:60px">'+esc(x.priority||"-")+'</td><td style="width:76px">'+esc(x.owner||"-")+"</td></tr>").join("");
+    return '<h2 class="pt">合规中心</h2><p class="sub">物流新政策/证照待办倒计时（A8：<15 天红 · <30 天黄）· 数据源：物流新政策跟进表 · 已完成项不显示</p>'
+      + '<div class="card"><table><tr><th>级别</th><th>待办事项</th><th>截止日期</th><th>剩余</th><th>优先级</th><th>执行人</th></tr>'+(tr||'<tr><td colspan=6 class="muted">暂无待办 🎉</td></tr>')+"</table></div>";
+  }
 
   var R = {dashboard:dashboard, price:price, xiaobao:xiaobao, recon:recon, transit:transit, warehouse:warehouse, compliance:compliance, quality:quality};
 
@@ -143,8 +160,8 @@ var App = (function(){
   }
 
   async function load(){
-    var rs = await Promise.all([fetchJSON("kpi.json"),fetchJSON("quotes.json"),fetchJSON("xiaobao.json"),fetchJSON("warehouse.json"),fetchJSON("quality.json"),fetchJSON("staging.json"),fetchJSON("fee.json"),fetchJSON("dictionary.json"),fetchJSON("baseline.json"),fetchJSON("recon.json"),fetchJSON("recon_summary.json"),fetchJSON("carriers.json")]);
-    D.kpi=rs[0]; D.quotes=rs[1]; D.xiaobao=rs[2]; D.warehouse=rs[3]; D.quality=rs[4]; D.staging=rs[5]; D.fee=rs[6]; D.dictionary=rs[7]; D.baseline=rs[8]; D.recon=rs[9]; D.reconSummary=rs[10]; D.carriers=rs[11];
+    var rs = await Promise.all([fetchJSON("kpi.json"),fetchJSON("quotes.json"),fetchJSON("xiaobao.json"),fetchJSON("warehouse.json"),fetchJSON("quality.json"),fetchJSON("staging.json"),fetchJSON("fee.json"),fetchJSON("dictionary.json"),fetchJSON("baseline.json"),fetchJSON("recon.json"),fetchJSON("recon_summary.json"),fetchJSON("carriers.json"),fetchJSON("compliance.json"),fetchJSON("transit.json")]);
+    D.kpi=rs[0]; D.quotes=rs[1]; D.xiaobao=rs[2]; D.warehouse=rs[3]; D.quality=rs[4]; D.staging=rs[5]; D.fee=rs[6]; D.dictionary=rs[7]; D.baseline=rs[8]; D.recon=rs[9]; D.reconSummary=rs[10]; D.carriers=rs[11]; D.compliance=rs[12]; D.transit=rs[13];
     document.getElementById("gen-time").textContent = (D.kpi&&D.kpi.generated_at)||"-";
     var fb = document.getElementById("fresh-badge");
     if (D.kpi&&D.kpi.generated_at){ fb.textContent="数据已加载"; fb.className="badge ok"; } else { fb.textContent="数据未加载"; fb.className="badge stale"; }
