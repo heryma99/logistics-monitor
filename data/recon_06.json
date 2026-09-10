@@ -1,10 +1,40 @@
 {
- "generated_at": "2026-09-10 14:57:08",
- "bill": "JW PEI LIMITED（2026-07-01）.xlsx",
- "price_version": "中运通达 价格表Vip（2026-6-23）.xlsx",
+ "generated_at": "2026-09-10 16:29:36",
+ "bill": "JW PEI LIMITED（2026-07-01）.xlsx (6月)",
+ "price_version": "v3 按收货日期匹配（16 个周版价格表）",
  "total_amount": 290560.89,
  "checked_total": 112303.81,
- "engine": "v1 覆盖3模式（海卡费率带 / UPS两表查表）；其余模式待适配",
+ "no_version_tickets": 0,
+ "version_usage": {
+  "2026-05-20": {
+   "tickets": 8,
+   "amount": 3572.1
+  },
+  "2026-05-26": {
+   "tickets": 24,
+   "amount": 35855.93
+  },
+  "2026-06-02": {
+   "tickets": 58,
+   "amount": 55499.74
+  },
+  "2026-06-09": {
+   "tickets": 75,
+   "amount": 149923.6
+  },
+  "2026-06-16": {
+   "tickets": 95,
+   "amount": 24338.44
+  },
+  "2026-06-23": {
+   "tickets": 82,
+   "amount": 18887.71
+  },
+  "2026-06-30": {
+   "tickets": 14,
+   "amount": 2483.37
+  }
+ },
  "rows": [
   {
    "mode": "欧洲包税空派(普货)",
@@ -61,10 +91,10 @@
    "tickets": 44,
    "chargeable_kg": 71.0,
    "amount": 18575.69,
-   "should": 16994.41,
+   "should": 17225.69,
    "checked": 44,
-   "viol": 1,
-   "viol_amt": 20.59
+   "viol": 0,
+   "viol_amt": 0.0
   },
   {
    "mode": "日本海运ACP逆算(贴标)",
@@ -137,16 +167,5 @@
    "viol_amt": 0.0
   }
  ],
- "violations": [
-  {
-   "no": "18036011-1870085-54",
-   "mode": "大陆UPS包税(美国)",
-   "dest": "美国",
-   "kg": 3.0,
-   "actual": 536.86,
-   "should": 486.3,
-   "diff": 20.6,
-   "note": "运费基准差异 · 附加费:[[\"产品附加费\", 30.0]]"
-  }
- ]
+ "violations": []
 }
