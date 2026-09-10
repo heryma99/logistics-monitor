@@ -117,6 +117,11 @@ var App = (function(){
       + '<div class="kpi"><div class="l">差异票</div><div class="v amber">'+(rc.violations||[]).length+'</div></div>'
       + '<div class="kpi"><div class="l">差异净额</div><div class="v amber">'+(viol_amt>0?"+":"")+Math.round(viol_amt)+'</div></div></div>'
       + '<div class="card"><h3>按运输方式汇总（应扣引擎核对）</h3><table><tr><th>运输方式</th><th>票数</th><th>应扣(参考)</th><th>实扣(元)</th><th>核对</th><th>差异额</th></tr>'+rows+"</table></div>"
+      + (function(){
+          var cs = (D.carriers&&D.carriers.carriers)||[];
+          var tr = cs.map(c=>'<tr><td>'+c.carrier+'</td><td>'+c.period+'</td><td>'+c.tickets+'</td><td style="color:var(--tx)">¥'+c.total_amount+'</td><td class="muted">应扣待适配</td></tr>').join("");
+          return '<div class="card"><h3>其他承运商账单（实扣侧）</h3><table><tr><th>承运商</th><th>账期</th><th>票数</th><th>金额</th><th>核对状态</th></tr>'+tr+"</table></div>";
+        })()
       + '<div class="card"><h3>差异票明细（Top15）</h3><table><tr><th>单号</th><th>运输方式</th><th>目的国</th><th>计费重</th><th>实扣</th><th>应扣参考</th><th>差异</th><th>备注</th></tr>'+viols+"</table></div>"
       + (function(){
           var rs = (D.reconSummary&&D.reconSummary.months)||[];
@@ -138,8 +143,8 @@ var App = (function(){
   }
 
   async function load(){
-    var rs = await Promise.all([fetchJSON("kpi.json"),fetchJSON("quotes.json"),fetchJSON("xiaobao.json"),fetchJSON("warehouse.json"),fetchJSON("quality.json"),fetchJSON("staging.json"),fetchJSON("fee.json"),fetchJSON("dictionary.json"),fetchJSON("baseline.json"),fetchJSON("recon.json"),fetchJSON("recon_summary.json")]);
-    D.kpi=rs[0]; D.quotes=rs[1]; D.xiaobao=rs[2]; D.warehouse=rs[3]; D.quality=rs[4]; D.staging=rs[5]; D.fee=rs[6]; D.dictionary=rs[7]; D.baseline=rs[8]; D.recon=rs[9]; D.reconSummary=rs[10];
+    var rs = await Promise.all([fetchJSON("kpi.json"),fetchJSON("quotes.json"),fetchJSON("xiaobao.json"),fetchJSON("warehouse.json"),fetchJSON("quality.json"),fetchJSON("staging.json"),fetchJSON("fee.json"),fetchJSON("dictionary.json"),fetchJSON("baseline.json"),fetchJSON("recon.json"),fetchJSON("recon_summary.json"),fetchJSON("carriers.json")]);
+    D.kpi=rs[0]; D.quotes=rs[1]; D.xiaobao=rs[2]; D.warehouse=rs[3]; D.quality=rs[4]; D.staging=rs[5]; D.fee=rs[6]; D.dictionary=rs[7]; D.baseline=rs[8]; D.recon=rs[9]; D.reconSummary=rs[10]; D.carriers=rs[11];
     document.getElementById("gen-time").textContent = (D.kpi&&D.kpi.generated_at)||"-";
     var fb = document.getElementById("fresh-badge");
     if (D.kpi&&D.kpi.generated_at){ fb.textContent="数据已加载"; fb.className="badge ok"; } else { fb.textContent="数据未加载"; fb.className="badge stale"; }
