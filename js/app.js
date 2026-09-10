@@ -117,7 +117,13 @@ var App = (function(){
       + '<div class="kpi"><div class="l">差异票</div><div class="v amber">'+(rc.violations||[]).length+'</div></div>'
       + '<div class="kpi"><div class="l">差异净额</div><div class="v amber">'+(viol_amt>0?"+":"")+Math.round(viol_amt)+'</div></div></div>'
       + '<div class="card"><h3>按运输方式汇总（应扣引擎核对）</h3><table><tr><th>运输方式</th><th>票数</th><th>应扣(参考)</th><th>实扣(元)</th><th>核对</th><th>差异额</th></tr>'+rows+"</table></div>"
-      + '<div class="card"><h3>差异票明细（Top15）</h3><table><tr><th>单号</th><th>运输方式</th><th>目的国</th><th>计费重</th><th>实扣</th><th>应扣参考</th><th>差异</th><th>备注</th></tr>'+viols+"</table></div>";
+      + '<div class="card"><h3>差异票明细（Top15）</h3><table><tr><th>单号</th><th>运输方式</th><th>目的国</th><th>计费重</th><th>实扣</th><th>应扣参考</th><th>差异</th><th>备注</th></tr>'+viols+"</table></div>"
+      + (function(){
+          var rs = (D.reconSummary&&D.reconSummary.months)||[];
+          var tr = rs.map(x=>'<tr><td>'+x.month+'</td><td>¥'+x.total+'</td><td>'+x.coverage+'%</td><td>'+x.viol+'</td><td style="color:'+(x.pos>0?"var(--red)":"var(--tx2)")+'">'+(x.pos||"0")+'</td><td style="color:var(--tx2)">'+(x.neg||"0")+'</td><td style="color:'+(x.net>0?"var(--red)":"var(--green)")+'">'+x.net+'</td><td class="muted">'+x.pv+"</td></tr>").join("");
+          return '<div class="card"><h3>历史核验汇总（中运通达 · 逐月）</h3><table><tr><th>账期</th><th>账单总额</th><th>引擎覆盖</th><th>差异票</th><th>正差异</th><th>负差异(退费/赔偿)</th><th>净差异</th><th>核验用价格表</th></tr>'+tr+"</table>"
+            + '<p class="muted" style="margin-top:6px">5月高差异主因：整月横跨多个周版价格表而 v2 用单一版本核验——v3 将按每票收货日期匹配当周生效版本。</p></div>";
+        })();
   }
   function transit(){ return shell("在途监控","M3 上线：批次台账 + 云途轨迹订阅（14 节点归因）"); }
   function compliance(){ return shell("合规中心","M2/M3 上线：证照到期倒计时 + 退税匹配（接物流新政策跟进表）"); }
@@ -132,8 +138,8 @@ var App = (function(){
   }
 
   async function load(){
-    var rs = await Promise.all([fetchJSON("kpi.json"),fetchJSON("quotes.json"),fetchJSON("xiaobao.json"),fetchJSON("warehouse.json"),fetchJSON("quality.json"),fetchJSON("staging.json"),fetchJSON("fee.json"),fetchJSON("dictionary.json"),fetchJSON("baseline.json"),fetchJSON("recon.json")]);
-    D.kpi=rs[0]; D.quotes=rs[1]; D.xiaobao=rs[2]; D.warehouse=rs[3]; D.quality=rs[4]; D.staging=rs[5]; D.fee=rs[6]; D.dictionary=rs[7]; D.baseline=rs[8]; D.recon=rs[9];
+    var rs = await Promise.all([fetchJSON("kpi.json"),fetchJSON("quotes.json"),fetchJSON("xiaobao.json"),fetchJSON("warehouse.json"),fetchJSON("quality.json"),fetchJSON("staging.json"),fetchJSON("fee.json"),fetchJSON("dictionary.json"),fetchJSON("baseline.json"),fetchJSON("recon.json"),fetchJSON("recon_summary.json")]);
+    D.kpi=rs[0]; D.quotes=rs[1]; D.xiaobao=rs[2]; D.warehouse=rs[3]; D.quality=rs[4]; D.staging=rs[5]; D.fee=rs[6]; D.dictionary=rs[7]; D.baseline=rs[8]; D.recon=rs[9]; D.reconSummary=rs[10];
     document.getElementById("gen-time").textContent = (D.kpi&&D.kpi.generated_at)||"-";
     var fb = document.getElementById("fresh-badge");
     if (D.kpi&&D.kpi.generated_at){ fb.textContent="数据已加载"; fb.className="badge ok"; } else { fb.textContent="数据未加载"; fb.className="badge stale"; }
