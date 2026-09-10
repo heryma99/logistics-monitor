@@ -105,7 +105,16 @@ var App = (function(){
       + '<div class="card"><h3>物流商异常聚合</h3><table><tr><th>物流商</th><th>问题数</th><th>已完结</th><th>未完结</th><th>完结率</th></tr>'+tr+"</table></div>";
   }
 
-  function recon(){ return shell("账单对账","M2 上线：中运通达解析 + 云途 API 逐票明细（应扣 vs 实扣，差异成单）"); }
+  function recon(){
+    var rc = D.recon||{};
+    var rows = (rc.rows||[]).map(x=>'<tr><td>'+x.mode+'</td><td>'+x.tickets+'</td><td>'+x.chargeable_kg+'</td><td style="color:var(--tx)">'+x.amount+'</td><td style="color:var(--tx3)">M2-1 下一步：计费引擎应扣</td></tr>').join("");
+    return '<h2 class="pt">账单对账</h2><p class="sub">实扣侧已接入：'+(rc.bill||"")+' · 自动从 wl02 邮箱抓取解析 · 应扣引擎（对照中运价格表重算）为 M2-1 下一步</p>'
+      + '<div class="kpis"><div class="kpi"><div class="l">账单总额（实扣）</div><div class="v">¥'+(rc.total_amount||0)+'</div></div>'
+      + '<div class="kpi"><div class="l">票数</div><div class="v">'+((rc.rows||[]).reduce((s,x)=>s+x.tickets,0))+'</div></div>'
+      + '<div class="kpi"><div class="l">差异（待应扣引擎）</div><div class="v amber">待算</div></div>'
+      + '<div class="kpi"><div class="l">已追回</div><div class="v green">0</div></div></div>'
+      + '<div class="card"><h3>按运输方式汇总（实扣）</h3><table><tr><th>运输方式</th><th>票数</th><th>计费重(kg)</th><th>金额(元)</th><th>应扣核对</th></tr>'+rows+"</table></div>";
+  }
   function transit(){ return shell("在途监控","M3 上线：批次台账 + 云途轨迹订阅（14 节点归因）"); }
   function compliance(){ return shell("合规中心","M2/M3 上线：证照到期倒计时 + 退税匹配（接物流新政策跟进表）"); }
 
@@ -119,8 +128,8 @@ var App = (function(){
   }
 
   async function load(){
-    var rs = await Promise.all([fetchJSON("kpi.json"),fetchJSON("quotes.json"),fetchJSON("xiaobao.json"),fetchJSON("warehouse.json"),fetchJSON("quality.json"),fetchJSON("staging.json"),fetchJSON("fee.json"),fetchJSON("dictionary.json"),fetchJSON("baseline.json")]);
-    D.kpi=rs[0]; D.quotes=rs[1]; D.xiaobao=rs[2]; D.warehouse=rs[3]; D.quality=rs[4]; D.staging=rs[5]; D.fee=rs[6]; D.dictionary=rs[7]; D.baseline=rs[8];
+    var rs = await Promise.all([fetchJSON("kpi.json"),fetchJSON("quotes.json"),fetchJSON("xiaobao.json"),fetchJSON("warehouse.json"),fetchJSON("quality.json"),fetchJSON("staging.json"),fetchJSON("fee.json"),fetchJSON("dictionary.json"),fetchJSON("baseline.json"),fetchJSON("recon.json")]);
+    D.kpi=rs[0]; D.quotes=rs[1]; D.xiaobao=rs[2]; D.warehouse=rs[3]; D.quality=rs[4]; D.staging=rs[5]; D.fee=rs[6]; D.dictionary=rs[7]; D.baseline=rs[8]; D.recon=rs[9];
     document.getElementById("gen-time").textContent = (D.kpi&&D.kpi.generated_at)||"-";
     var fb = document.getElementById("fresh-badge");
     if (D.kpi&&D.kpi.generated_at){ fb.textContent="数据已加载"; fb.className="badge ok"; } else { fb.textContent="数据未加载"; fb.className="badge stale"; }
