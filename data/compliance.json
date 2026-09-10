@@ -1,0 +1,66 @@
+{
+ "generated_at": "2026-09-10 17:53:55",
+ "source": "周报Base·物流新政策跟进",
+ "rows": [
+  {
+   "todo": "墨西哥清关税率变动通知（鞋类）",
+   "deadline": "2026-01-01",
+   "days_left": 0,
+   "priority": "🔴P0-高优",
+   "owner": null,
+   "impact": "申报价值调整为23$,关税约7.71$，需缴纳关税最低，成本上涨约50RMB\n改精选渠道，鞋类成本约上涨25RMB",
+   "done": "True",
+   "level": "红"
+  },
+  {
+   "todo": "墨西哥清关低申报问题",
+   "deadline": "2026-01-15",
+   "days_left": 0,
+   "priority": "🔴P0-高优",
+   "owner": null,
+   "impact": "如被判断为低申报，需按海关要求补缴费用，不能选择弃件",
+   "done": "True",
+   "level": "红"
+  },
+  {
+   "todo": "土耳其4202/4203/4205开头的HS禁止入境",
+   "deadline": null,
+   "days_left": 0,
+   "priority": "🟡P1-一般",
+   "owner": null,
+   "impact": "云途取消土耳其发货",
+   "done": "True",
+   "level": "红"
+  },
+  {
+   "todo": "泰国取消低价商品免税政策",
+   "deadline": null,
+   "days_left": 0,
+   "priority": "🟡P1-一般",
+   "owner": null,
+   "impact": "成本上升15-20RMB",
+   "done": "",
+   "level": "红"
+  },
+  {
+   "todo": "关于罗马尼亚税改",
+   "deadline": null,
+   "days_left": 0,
+   "priority": "🟡P1-一般",
+   "owner": null,
+   "impact": "成本上升约40RMBRMB",
+   "done": "True",
+   "level": "红"
+  },
+  {
+   "todo": "法国税改",
+   "deadline": null,
+   "days_left": 0,
+   "priority": "🟡P1-一般",
+   "owner": null,
+   "impact": "切换清关口岸，从CDG清关转换成LGG或AMS等口岸清关，时效延迟1-2天",
+   "done": "True",
+   "level": "红"
+  }
+ ]
+}
