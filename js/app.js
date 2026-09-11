@@ -159,6 +159,19 @@ var App = (function(){
           return '<div class="card"><h3>段耗时与卡点（正确节点序：提货→离港→到港→放行→派送）</h3><table><tr><th>线路</th><th>票数</th><th>提货→离港</th><th>离港→到港(头程)</th><th>到港→放行(清关)</th><th>放行→派送(尾程)</th><th>最大卡点</th></tr>'+sg+"</table></div>"
             + (an? '<div class="card"><h3>异常记录（数据疑误，已从统计隔离）</h3><table><tr><th>FBA货件号</th><th>线路</th><th>区间</th><th>跨度</th><th>判定</th></tr>'+an+"</table></div>": "");
         })();
+    var drillCard = (function(){
+      var dl = (D.transit&&D.transit.drill_lines)||[];
+      if(!dl.length) return "";
+      return dl.map(function(d){
+        var tk = (d.tickets||[]).map(function(x){
+          var late = (x.total!=null && x.total>d.avg_ref);
+          return '<tr><td>'+esc(x.fba)+'</td><td style="color:var(--tx2)">'+esc(x.atd)+'</td><td style="color:var(--tx2)">'+esc(x.etd||"—")+'</td><td style="color:var(--tx2)">'+esc(x.ata||"—")+'</td><td style="color:var(--tx2)">'+esc(x.customs||"—")+'</td><td style="color:var(--tx2)">'+esc(x.dlv||"—")+'</td><td style="color:'+((x.s2!=null&&x.s2>25)?"var(--amber)":"var(--tx2)")+'">'+(x.s2!=null?x.s2:"—")+'</td><td style="color:'+(late?"var(--red)":"var(--tx)")+';font-weight:500">'+(x.total!=null?x.total:"—")+'</td></tr>';
+        }).join("");
+        return '<div class="card" style="border-left:3px solid var(--amber)"><h3>⚑ 线路逐票下钻：'+esc(d.lane)+'（'+d.n+' 票中 '+d.over_pct+'% 超参考）</h3>'
+          + '<p class="muted" style="margin:2px 0 8px">均值 '+d.avg_actual+' 天看似正常，但个别票严重超时——这正是「只看总量会漏掉」的典型。参考时效 '+d.avg_ref+' 天。</p>'
+          + '<table><tr><th>FBA货件号</th><th>提货(ATD)</th><th>离港(ETD)</th><th>到港(ATA)</th><th>清关放行</th><th>派送</th><th>头程(天)</th><th>总(天)</th></tr>'+tk+"</table></div>";
+      }).join("");
+    })();
     var stageTip = '<p class="muted" style="margin:4px 0 10px">分段口径（六段节点）：起算点(仓库实际发出/ETD) → 头程 → 清关 → 尾程派送；参考时效取自「物流渠道及时效-默认」（按 国家+发货方式 精确匹配）。规则：已用&gt;参考物流段=已进查验段 · 已用&gt;物流+查验=超全程 · 已用&gt;物流段×0.7=头程偏慢（提前预警）。</p>';
     return '<h2 class="pt">在途监控 · FBA 线</h2><p class="sub">已发出未签收的货件 · 分段节点对照参考时效 · 查验票自动标红 · 数据源：FBA发货明细（脚本同步，快照 '+((D.transit&&D.transit.generated_at)||"")+'）</p>'
       + '<div class="kpis">'
@@ -167,6 +180,7 @@ var App = (function(){
       + '<div class="kpi"><div class="l">查验</div><div class="v red">'+(st.chaxun||0)+'</div></div>'
       + '<div class="kpi"><div class="l">已签收</div><div class="v green">'+(st.arrived||0)+'</div></div></div>'
       + histCard
+      + drillCard
       + '<div class="card">'+stageTip+'<table><tr><th>状态</th><th>FBA 货件号</th><th>渠道</th><th>物流商</th><th>目的国</th><th>起算点</th><th>已用</th><th>参考(物流+查验)</th><th>阶段判定</th><th>ETA</th><th>查验</th></tr>'+tr+"</table></div>"
       + '<p class="muted">半月账单/DPEX 线与云途轨迹 API（逐票 14 节点归因）按台账 M3 接入。</p>';
   }
