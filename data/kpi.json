@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-11 09:34:58",
+ "generated_at": "2026-09-11 13:58:40",
  "today_alerts": 45,
  "open_tickets": 44.0,
  "staging_pending": 35,
@@ -47,7 +47,7 @@
   {
    "name": "数据域",
    "level": "green",
-   "note": "快照 2026-09-11 09:34:58"
+   "note": "快照 2026-09-11 13:58:40"
   }
  ],
  "alerts": [
