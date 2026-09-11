@@ -1,0 +1,357 @@
+{
+ "generated_at": "2026-09-11 14:22:35",
+ "source": "FBA Base·【时效】物流渠道及时效-默认",
+ "rows": [
+  {
+   "country": "美国",
+   "way": [
+    "空派包税"
+   ],
+   "mode": "空运",
+   "channel": "空运/空派",
+   "logi_days": 6.0,
+   "check_days": 8.0,
+   "total_days": 14.0,
+   "basis": "ETD-预计离港时间",
+   "logi_peak": 11.0
+  },
+  {
+   "country": "美国",
+   "way": [
+    "海卡包税"
+   ],
+   "mode": "非空运-海卡",
+   "channel": "美国包税海卡-美森正班",
+   "logi_days": 22.0,
+   "check_days": 12.0,
+   "total_days": 34.0,
+   "basis": "ETD-预计离港时间",
+   "logi_peak": 27.0
+  },
+  {
+   "country": "美国",
+   "way": [
+    "海派包税"
+   ],
+   "mode": "非空运-海派",
+   "channel": "美国包税海派（UPS）-美森正班",
+   "logi_days": 18.0,
+   "check_days": 7.0,
+   "total_days": 25.0,
+   "basis": "ETD-预计离港时间",
+   "logi_peak": 23.0
+  },
+  {
+   "country": "加拿大",
+   "way": [
+    "空派包税"
+   ],
+   "mode": "空运",
+   "channel": "包税空派",
+   "logi_days": 12.0,
+   "check_days": 10.0,
+   "total_days": 22.0,
+   "basis": "ETD-预计离港时间",
+   "logi_peak": 17.0
+  },
+  {
+   "country": "加拿大",
+   "way": [
+    "海卡包税"
+   ],
+   "mode": "非空运-海卡",
+   "channel": "加拿大限时达-卡派",
+   "logi_days": 22.0,
+   "check_days": 10.0,
+   "total_days": 32.0,
+   "basis": "ETD-预计离港时间",
+   "logi_peak": 28.0
+  },
+  {
+   "country": "加拿大",
+   "way": [
+    "海派包税"
+   ],
+   "mode": "非空运-海派",
+   "channel": "加拿大限时达-UPS派送",
+   "logi_days": 22.0,
+   "check_days": 10.0,
+   "total_days": 32.0,
+   "basis": "ETD-预计离港时间",
+   "logi_peak": 28.0
+  },
+  {
+   "country": "加拿大",
+   "way": [
+    "海卡包税"
+   ],
+   "mode": "非空运-海卡",
+   "channel": "加拿大定提-卡派",
+   "logi_days": 22.0,
+   "check_days": 10.0,
+   "total_days": 32.0,
+   "basis": "ETD-预计离港时间",
+   "logi_peak": 28.0
+  },
+  {
+   "country": "加拿大",
+   "way": [
+    "海派包税"
+   ],
+   "mode": "非空运-海派",
+   "channel": "加拿大定提-UPS派送",
+   "logi_days": 22.0,
+   "check_days": 10.0,
+   "total_days": 32.0,
+   "basis": "ETD-预计离港时间",
+   "logi_peak": 28.0
+  },
+  {
+   "country": "意大利",
+   "way": [
+    "空派包税"
+   ],
+   "mode": "空运",
+   "channel": "欧洲包税-空派(普货)",
+   "logi_days": 15.0,
+   "check_days": 7.0,
+   "total_days": 22.0,
+   "basis": "仓库实际发出日期-景泰填",
+   "logi_peak": 18.0
+  },
+  {
+   "country": "意大利",
+   "way": [
+    "卡航包税"
+   ],
+   "mode": "非空运-卡航",
+   "channel": "欧洲包税-卡航",
+   "logi_days": 30.0,
+   "check_days": 7.0,
+   "total_days": 37.0,
+   "basis": "仓库实际发出日期-景泰填",
+   "logi_peak": 40.0
+  },
+  {
+   "country": "意大利",
+   "way": [
+    "海派包税"
+   ],
+   "mode": "非空运-海运",
+   "channel": "欧洲包税-海运  默认UPS",
+   "logi_days": 50.0,
+   "check_days": 7.0,
+   "total_days": 57.0,
+   "basis": "仓库实际发出日期-景泰填",
+   "logi_peak": 60.0
+  },
+  {
+   "country": "英国",
+   "way": [
+    "空派递延"
+   ],
+   "mode": "空运",
+   "channel": "英国VAT递延-空运慢线",
+   "logi_days": 12.0,
+   "check_days": 7.0,
+   "total_days": 19.0,
+   "basis": "仓库实际发出日期-景泰填",
+   "logi_peak": 15.0
+  },
+  {
+   "country": "英国",
+   "way": [
+    "卡航递延"
+   ],
+   "mode": "非空运-卡航",
+   "channel": "英国VAT递延-卡航",
+   "logi_days": 30.0,
+   "check_days": 7.0,
+   "total_days": 37.0,
+   "basis": "仓库实际发出日期-景泰填",
+   "logi_peak": 40.0
+  },
+  {
+   "country": "英国",
+   "way": [
+    "海卡递延"
+   ],
+   "mode": "非空运-海卡",
+   "channel": "英国VAT递延-海卡",
+   "logi_days": 50.0,
+   "check_days": 7.0,
+   "total_days": 57.0,
+   "basis": "仓库实际发出日期-景泰填",
+   "logi_peak": 60.0
+  },
+  {
+   "country": "英国",
+   "way": [
+    "海派递延"
+   ],
+   "mode": "非空运-海运",
+   "channel": "英国VAT递延-海运",
+   "logi_days": 50.0,
+   "check_days": 7.0,
+   "total_days": 57.0,
+   "basis": "仓库实际发出日期-景泰填",
+   "logi_peak": 60.0
+  },
+  {
+   "country": "日本",
+   "way": [
+    "空派自税"
+   ],
+   "mode": "空运",
+   "channel": "空运普货ACP逆算(贴标)",
+   "logi_days": 8.0,
+   "check_days": 7.0,
+   "total_days": 15.0,
+   "basis": "仓库实际发出日期-景泰填",
+   "logi_peak": 10.0
+  },
+  {
+   "country": "日本",
+   "way": [
+    "海派自税"
+   ],
+   "mode": "非空运-海运",
+   "channel": "海运快船ACP逆算(贴标)",
+   "logi_days": 20.0,
+   "check_days": 7.0,
+   "total_days": 27.0,
+   "basis": "仓库实际发出日期-景泰填",
+   "logi_peak": 25.0
+  },
+  {
+   "country": "澳大利亚",
+   "way": [
+    "空派包税"
+   ],
+   "mode": "空运",
+   "channel": null,
+   "logi_days": 16.0,
+   "check_days": 10.0,
+   "total_days": 26.0,
+   "basis": "ETD-预计离港时间",
+   "logi_peak": 21.0
+  },
+  {
+   "country": "澳大利亚",
+   "way": [
+    "海卡包税"
+   ],
+   "mode": "非空运-海卡",
+   "channel": null,
+   "logi_days": 28.0,
+   "check_days": 10.0,
+   "total_days": 38.0,
+   "basis": "ETD-预计离港时间",
+   "logi_peak": 35.0
+  },
+  {
+   "country": "德国",
+   "way": [
+    "空派包税"
+   ],
+   "mode": "空运",
+   "channel": "欧洲包税-空派(普货)",
+   "logi_days": 12.0,
+   "check_days": 7.0,
+   "total_days": 19.0,
+   "basis": "ETD-预计离港时间",
+   "logi_peak": 17.0
+  },
+  {
+   "country": "德国",
+   "way": [
+    "卡航包税"
+   ],
+   "mode": "非空运-卡航",
+   "channel": "欧洲包税-卡航",
+   "logi_days": 25.0,
+   "check_days": 7.0,
+   "total_days": 32.0,
+   "basis": "ETD-预计离港时间",
+   "logi_peak": 30.0
+  },
+  {
+   "country": "德国",
+   "way": [
+    "海派包税"
+   ],
+   "mode": "非空运-海运",
+   "channel": "欧洲包税-海运  默认UPS",
+   "logi_days": 25.0,
+   "check_days": 10.0,
+   "total_days": 35.0,
+   "basis": "ETD-预计离港时间",
+   "logi_peak": 30.0
+  },
+  {
+   "country": "澳大利亚",
+   "way": [
+    "海派包税"
+   ],
+   "mode": "非空运-海运",
+   "channel": null,
+   "logi_days": 28.0,
+   "check_days": 10.0,
+   "total_days": 38.0,
+   "basis": "ETD-预计离港时间",
+   "logi_peak": 35.0
+  },
+  {
+   "country": "阿联酋",
+   "way": [
+    "空派包税"
+   ],
+   "mode": "空运",
+   "channel": null,
+   "logi_days": 10.0,
+   "check_days": 7.0,
+   "total_days": 17.0,
+   "basis": "仓库实际发出日期-景泰填",
+   "logi_peak": 15.0
+  },
+  {
+   "country": "阿联酋",
+   "way": [
+    "海派包税"
+   ],
+   "mode": "非空运-海运",
+   "channel": null,
+   "logi_days": 30.0,
+   "check_days": 7.0,
+   "total_days": 37.0,
+   "basis": "仓库实际发出日期-景泰填",
+   "logi_peak": 40.0
+  },
+  {
+   "country": "沙特",
+   "way": [
+    "空派包税"
+   ],
+   "mode": "空运",
+   "channel": null,
+   "logi_days": 15.0,
+   "check_days": 7.0,
+   "total_days": 22.0,
+   "basis": "仓库实际发出日期-景泰填",
+   "logi_peak": 20.0
+  },
+  {
+   "country": "沙特",
+   "way": [
+    "海派包税"
+   ],
+   "mode": "非空运-海运",
+   "channel": null,
+   "logi_days": 45.0,
+   "check_days": 15.0,
+   "total_days": 60.0,
+   "basis": "仓库实际发出日期-景泰填",
+   "logi_peak": 55.0
+  }
+ ]
+}
