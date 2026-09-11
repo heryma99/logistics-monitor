@@ -150,14 +150,15 @@ var App = (function(){
   function transit(){
     var st = (D.transit&&D.transit.stats)||{};
     var rows = (D.transit&&D.transit.rows)||[];
-    var tr = rows.map(x=>'<tr><td style="width:44px">'+pill(x.level||"灰")+'</td><td>'+esc(x.fba)+'</td><td>'+esc(x.channel||"-")+'</td><td style="color:var(--tx2)">'+esc(x.carrier||"-")+'</td><td>'+esc(x.dest||"-")+'</td><td style="color:var(--tx2)">'+esc(x.atd||"-")+'</td><td>'+esc(x.eta||"-")+'</td><td style="color:'+(x.delay_days>0?"var(--red)":"var(--tx2)")+'">'+(x.delay_days!=null&&x.delay_days>0?("+ "+x.delay_days+" 天"):(x.ata?"已签收":"在途"))+'</td><td>'+((x.check||"").indexOf("是")>=0?pill("红"):"—")+"</td></tr>").join("");
-    return '<h2 class="pt">在途监控 · FBA 线</h2><p class="sub">ATD 已发出未签收的货件 · 延误=ETA 已过 · 查验票自动标红 · 数据源：FBA发货明细（脚本同步，快照 '+((D.transit&&D.transit.generated_at)||"")+'）</p>'
+    var tr = rows.map(x=>'<tr><td style="width:44px">'+pill(x.level||"灰")+'</td><td>'+esc(x.fba)+'</td><td>'+esc(x.channel||"-")+'</td><td style="color:var(--tx2)">'+esc(x.carrier||"-")+'</td><td>'+esc(x.dest||"-")+'</td><td style="color:var(--tx2)">'+esc(x.basis_date||x.atd||"-")+'</td><td><b style="color:'+((x.elapsed_days||0)>(x.ref_total||999)?"var(--red)":"var(--tx)")+'">'+(x.elapsed_days!=null?x.elapsed_days+" 天":"-")+'</b></td><td style="color:var(--tx2)">'+(x.ref_logi!=null?(x.ref_logi+"+"+(x.ref_check||0)+" 天"):"-")+'</td><td>'+esc(x.stage||"-")+'</td><td style="color:'+(x.delay_days>0?"var(--red)":"var(--tx2)")+'">'+(x.delay_days!=null&&x.delay_days>0?("ETA超 "+x.delay_days+" 天"):(x.ata?"已签收":"在途"))+'</td><td>'+((x.check||"").indexOf("是")>=0?pill("红"):"—")+"</td></tr>").join("");
+    var stageTip = '<p class="muted" style="margin:4px 0 10px">分段口径（六段节点）：起算点(仓库实际发出/ETD) → 头程 → 清关 → 尾程派送；参考时效取自「物流渠道及时效-默认」（按 国家+发货方式 精确匹配）。规则：已用&gt;参考物流段=已进查验段 · 已用&gt;物流+查验=超全程 · 已用&gt;物流段×0.7=头程偏慢（提前预警）。</p>';
+    return '<h2 class="pt">在途监控 · FBA 线</h2><p class="sub">已发出未签收的货件 · 分段节点对照参考时效 · 查验票自动标红 · 数据源：FBA发货明细（脚本同步，快照 '+((D.transit&&D.transit.generated_at)||"")+'）</p>'
       + '<div class="kpis">'
       + '<div class="kpi"><div class="l">在途批次</div><div class="v">'+(st.intransit||0)+'</div></div>'
       + '<div class="kpi"><div class="l">ETA 已超</div><div class="v amber">'+(st.delayed||0)+'</div></div>'
       + '<div class="kpi"><div class="l">查验</div><div class="v red">'+(st.chaxun||0)+'</div></div>'
       + '<div class="kpi"><div class="l">已签收</div><div class="v green">'+(st.arrived||0)+'</div></div></div>'
-      + '<div class="card"><table><tr><th>状态</th><th>FBA 货件号</th><th>渠道</th><th>物流商</th><th>目的国</th><th>ATD</th><th>ETA</th><th>时效</th><th>查验</th></tr>'+tr+"</table></div>"
+      + '<div class="card">'+stageTip+'<table><tr><th>状态</th><th>FBA 货件号</th><th>渠道</th><th>物流商</th><th>目的国</th><th>起算点</th><th>已用</th><th>参考(物流+查验)</th><th>阶段判定</th><th>ETA</th><th>查验</th></tr>'+tr+"</table></div>"
       + '<p class="muted">半月账单/DPEX 线与云途轨迹 API（逐票 14 节点归因）按台账 M3 接入。</p>';
   }
   function compliance(){
