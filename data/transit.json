@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-11 14:22:35",
+ "generated_at": "2026-09-11 14:34:52",
  "source": "周报Base·FBA发货明细(脚本同步)",
  "today": "2026-09-11",
  "stats": {
@@ -33,6 +33,144 @@
    "ref_logi": 22.0,
    "stage": "已进查验段",
    "level": "红"
+  }
+ ],
+ "history": [
+  {
+   "lane": "加拿大·海卡包税",
+   "n": 6,
+   "avg_actual": 71.8,
+   "avg_ref": 32.0,
+   "gap": 39.8,
+   "over_pct": 16.7
+  },
+  {
+   "lane": "德国·卡航包税",
+   "n": 9,
+   "avg_actual": 24.2,
+   "avg_ref": 32.0,
+   "gap": -7.8,
+   "over_pct": 22.2
+  },
+  {
+   "lane": "英国·卡航递延",
+   "n": 6,
+   "avg_actual": 25.2,
+   "avg_ref": 37.0,
+   "gap": -11.8,
+   "over_pct": 0.0
+  },
+  {
+   "lane": "美国·空派包税",
+   "n": 27,
+   "avg_actual": 1.8,
+   "avg_ref": 14.0,
+   "gap": -12.2,
+   "over_pct": 0.0
+  },
+  {
+   "lane": "意大利·卡航包税",
+   "n": 4,
+   "avg_actual": 24.8,
+   "avg_ref": 37.0,
+   "gap": -12.2,
+   "over_pct": 0.0
+  },
+  {
+   "lane": "美国·海派包税",
+   "n": 25,
+   "avg_actual": 11.0,
+   "avg_ref": 25.0,
+   "gap": -14.0,
+   "over_pct": 0.0
+  },
+  {
+   "lane": "日本·空派自税",
+   "n": 2,
+   "avg_actual": 0.0,
+   "avg_ref": 15.0,
+   "gap": -15.0,
+   "over_pct": 0.0
+  },
+  {
+   "lane": "德国·空派包税",
+   "n": 8,
+   "avg_actual": 2.5,
+   "avg_ref": 19.0,
+   "gap": -16.5,
+   "over_pct": 0.0
+  },
+  {
+   "lane": "英国·空派递延",
+   "n": 4,
+   "avg_actual": 2.0,
+   "avg_ref": 19.0,
+   "gap": -17.0,
+   "over_pct": 0.0
+  },
+  {
+   "lane": "沙特·空派包税",
+   "n": 2,
+   "avg_actual": 2.0,
+   "avg_ref": 22.0,
+   "gap": -20.0,
+   "over_pct": 0.0
+  },
+  {
+   "lane": "加拿大·空派包税",
+   "n": 2,
+   "avg_actual": 2.0,
+   "avg_ref": 22.0,
+   "gap": -20.0,
+   "over_pct": 0.0
+  },
+  {
+   "lane": "加拿大·海派包税",
+   "n": 2,
+   "avg_actual": 11.5,
+   "avg_ref": 32.0,
+   "gap": -20.5,
+   "over_pct": 0.0
+  },
+  {
+   "lane": "意大利·海派包税",
+   "n": 2,
+   "avg_actual": 36.0,
+   "avg_ref": 57.0,
+   "gap": -21.0,
+   "over_pct": 0.0
+  },
+  {
+   "lane": "英国·海派递延",
+   "n": 2,
+   "avg_actual": 36.0,
+   "avg_ref": 57.0,
+   "gap": -21.0,
+   "over_pct": 0.0
+  },
+  {
+   "lane": "美国·海卡包税",
+   "n": 40,
+   "avg_actual": 10.6,
+   "avg_ref": 34.0,
+   "gap": -23.4,
+   "over_pct": 0.0
+  },
+  {
+   "lane": "日本·海派自税",
+   "n": 12,
+   "avg_actual": 2.2,
+   "avg_ref": 27.0,
+   "gap": -24.8,
+   "over_pct": 0.0
+  },
+  {
+   "lane": "沙特·海派包税",
+   "n": 10,
+   "avg_actual": 20.4,
+   "avg_ref": 60.0,
+   "gap": -39.6,
+   "over_pct": 0.0
   }
  ]
 }
