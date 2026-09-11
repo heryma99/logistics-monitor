@@ -47,7 +47,22 @@ var App = (function(){
 
   function xiaobao(){
     var rows = (D.xiaobao&&D.xiaobao.rows)||[];
-    var tr = rows.slice(0,40).map(x=>'<tr><td'+(x.status==="不达标"?' style="color:var(--red);font-weight:500"':x.status==="观察"?' style="color:var(--amber)"':'')+">"+x.channel+'</td><td>'+x.country+'</td><td>'+x.pkg+'</td><td>'+(x.std_days||"-")+'</td><td style="color:'+(x.ontime_rate<80?"var(--red)":x.ontime_rate<85?"var(--amber)":"var(--green)")+'">'+x.ontime_rate+"%</td><td>"+x.over30_rate+"%</td><td>"+pill(x.status)+"</td></tr>").join("");
+    function seg(x){
+      var p = x.pkg||1;
+      var segs = [
+        ["var(--green)", x.ontime_rate||0],
+        ["#d4c05a", (x.b17/p*100)],
+        ["var(--amber)", (x.b814/p*100)],
+        ["#e07b39", (x.b1522/p*100)],
+        ["#c05a2a", (x.b2330/p*100)],
+        ["var(--red)", (x.b30p/p*100)]
+      ];
+      return '<div class="bar" style="display:flex;height:10px;border-radius:5px;overflow:hidden">'
+        + segs.filter(s=>s[1]>0.5).map(s=>'<i style="width:'+s[1]+'%;background:'+s[0]+'"></i>').join("")
+        + "</div>";
+    }
+    var tr = rows.slice(0,40).map(x=>'<tr><td'+(x.status==="不达标"?' style="color:var(--red);font-weight:500"':x.status==="观察"?' style="color:var(--amber)"':'')+">"+x.channel+'</td><td>'+x.country+'</td><td>'+x.pkg+'</td><td>'+(x.std_days||"-")+'</td><td style="color:'+(x.ontime_rate<80?"var(--red)":x.ontime_rate<85?"var(--amber)":"var(--green)")+'">'+x.ontime_rate+"%</td><td>"+seg(x)+"</td><td>"+x.over30_rate+"%</td><td>"+(x.early?('<span class="pill amber">⚡'+x.over15_pct+"%</span>"):"—")+'</td><td>'+pill(x.status)+"</td></tr>").join("");
+    var legend = '<p class="muted" style="margin:4px 0 10px">分段时效（占包裹数）：<span style="color:var(--green)">■</span> 时效内 <span style="color:#d4c05a">■</span> 超1-7天 <span style="color:var(--amber)">■</span> 超8-14天 <span style="color:#e07b39">■</span> 超15-22天 <span style="color:#c05a2a">■</span> 超23-30天 <span style="color:var(--red)">■</span> 超30天+　⚡前置预警=超15天以上占比>8%（这批货下周期将变成超期主力）</p>';
     var bl = (D.baseline&&D.baseline.baseline)||[];
     var suspicious = bl.filter(b=>b.pkg>0).map(b=>b.pkg);
     var dup = suspicious.length>2 && suspicious.filter(v=>v===suspicious[1]).length>=2;
@@ -63,7 +78,8 @@ var App = (function(){
       + '<p class="muted" style="margin-top:4px">📌 口径已定（双轨制，2026-09-10）：北极星 N3 用口径A 按包裹加权（当前 92.8%，客户体验），运营考核用口径B 按线路达标（当前 64%，渠道覆盖面）——已写入指标字典，如需调整随时改。</p>'
       + "</div>";
     return '<h2 class="pt">小包时效达标</h2><p class="sub">口径：时效内签收率 = 时效内签收 ÷ 包裹数；判定 A15（<85% 黄）/ A16（<80% 或超30天>5% 红）· 当前月：26年7月时效表</p>'
-      + '<div class="card"><table><tr><th>渠道</th><th>国家</th><th>包裹</th><th>标准(天)</th><th>时效内签收</th><th>超30天占比</th><th>判定</th></tr>'+tr+"</table></div>";
+      + '<div class="card"><table><tr><th>渠道</th><th>国家</th><th>包裹</th><th>标准(天)</th><th>时效内签收</th><th style="min-width:130px">分段时效分布</th><th>超30天</th><th>前置预警</th><th>判定</th></tr>'+tr+"</table></div>"
+      + legend;
   }
 
   function warehouse(){
