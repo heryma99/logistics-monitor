@@ -77,9 +77,19 @@ var App = (function(){
       + (dup?'<p class="muted" style="margin-top:8px">⚠ 数据质量疑点：26-03/04/05 三个月包裹数完全相同（26,729），疑似月度表复制未更新——已列入治理清单，基线以 25-10~26-02 与 26-06/07 为准。</p>':"")
       + '<p class="muted" style="margin-top:4px">📌 口径已定（双轨制，2026-09-10）：北极星 N3 用口径A 按包裹加权（当前 92.8%，客户体验），运营考核用口径B 按线路达标（当前 64%，渠道覆盖面）——已写入指标字典，如需调整随时改。</p>'
       + "</div>";
+    var agingTrend = (function(){
+      var rows = bl.map(function(b){
+        var o17=b.over17_pct||0, o814=b.over814_pct||0, o1522=b.over1522_pct||0, o2330=b.over2330_pct||0, o30=b.over30_pct||0;
+        var ontime = Math.max(0, Math.round((100-(o17+o814+o1522+o2330+o30))*10)/10);
+        var segs=[["var(--green)",ontime],["#d4c05a",o17],["var(--amber)",o814],["#e07b39",o1522],["#c05a2a",o2330],["var(--red)",o30]];
+        var bar='<div class="bar" style="display:flex;height:14px;border-radius:4px;overflow:hidden">'+segs.filter(function(s){return s[1]>0.05;}).map(function(s){return '<i style="width:'+s[1]+'%;background:'+s[0]+'" title="'+s[1]+'%"></i>';}).join("")+'</div>';
+        return '<tr><td style="width:54px">'+b.month+'</td><td style="width:140px">'+bar+'</td><td style="color:var(--green);width:58px">'+ontime+'%</td><td style="color:#d4c05a;width:54px">'+o17+'%</td><td style="color:var(--amber);width:54px">'+o814+'%</td><td style="color:#e07b39;width:58px">'+o1522+'%</td><td style="color:#c05a2a;width:58px">'+o2330+'%</td><td style="color:var(--red);width:54px">'+o30+'%</td></tr>';
+      }).join("");
+      return '<div class="card"><h3>月度老化结构趋势（分段占比堆叠 · 占包裹数）</h3><table><tr><th>月份</th><th style="min-width:140px">结构</th><th>时效内</th><th>超1-7天</th><th>超8-14天</th><th>超15-22天</th><th>超23-30天</th><th>超30天+</th></tr>'+rows+'</table><p class="muted" style="margin-top:6px">📌 12月(25-12)超1-7天骤升至 13%（旺季爆仓效应，非时效崩坏）；超15天以上各月均&lt;1%，30天+常态&lt;1%。⚡前置预警见上方渠道表「超15天以上占比&gt;8%」列。</p></div>';
+    })();
     return '<h2 class="pt">小包时效达标</h2><p class="sub">口径：时效内签收率 = 时效内签收 ÷ 包裹数；判定 A15（<85% 黄）/ A16（<80% 或超30天>5% 红）· 当前月：26年7月时效表</p>'
       + '<div class="card"><table><tr><th>渠道</th><th>国家</th><th>包裹</th><th>标准(天)</th><th>时效内签收</th><th style="min-width:130px">分段时效分布</th><th>超30天</th><th>前置预警</th><th>判定</th></tr>'+tr+"</table></div>"
-      + legend;
+      + legend + trend + agingTrend;
   }
 
   function warehouse(){
