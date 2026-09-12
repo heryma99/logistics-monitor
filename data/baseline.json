@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-11 16:00:47",
+ "generated_at": "2026-09-12 15:27:13",
  "source": "周报Base·月度时效表×10",
  "target_ok_rate": 90,
  "baseline": [
@@ -13,8 +13,6 @@
    "over17_pct": 2.9,
    "over814_pct": 1.4,
    "over15_pct": 0.4,
-   "over1522_pct": 0.2,
-   "over2330_pct": 0.1,
    "over30_pct": 0.0
   },
   {
@@ -27,8 +25,6 @@
    "over17_pct": 2.7,
    "over814_pct": 1.1,
    "over15_pct": 1.0,
-   "over1522_pct": 0.7,
-   "over2330_pct": 0.2,
    "over30_pct": 0.1
   },
   {
@@ -41,8 +37,6 @@
    "over17_pct": 13.0,
    "over814_pct": 1.4,
    "over15_pct": 1.0,
-   "over1522_pct": 0.5,
-   "over2330_pct": 0.2,
    "over30_pct": 0.3
   },
   {
@@ -55,8 +49,6 @@
    "over17_pct": 4.9,
    "over814_pct": 0.7,
    "over15_pct": 0.9,
-   "over1522_pct": 0.5,
-   "over2330_pct": 0.1,
    "over30_pct": 0.2
   },
   {
@@ -69,8 +61,6 @@
    "over17_pct": 5.8,
    "over814_pct": 2.2,
    "over15_pct": 2.9,
-   "over1522_pct": 1.9,
-   "over2330_pct": 1.0,
    "over30_pct": 0.1
   },
   {
@@ -83,8 +73,6 @@
    "over17_pct": 6.0,
    "over814_pct": 1.2,
    "over15_pct": 1.6,
-   "over1522_pct": 0.7,
-   "over2330_pct": 0.5,
    "over30_pct": 0.4
   },
   {
@@ -97,8 +85,6 @@
    "over17_pct": 4.6,
    "over814_pct": 0.7,
    "over15_pct": 1.6,
-   "over1522_pct": 0.9,
-   "over2330_pct": 0.3,
    "over30_pct": 0.4
   },
   {
@@ -111,8 +97,6 @@
    "over17_pct": 5.8,
    "over814_pct": 1.1,
    "over15_pct": 1.8,
-   "over1522_pct": 0.4,
-   "over2330_pct": 0.4,
    "over30_pct": 1.0
   },
   {
@@ -125,8 +109,6 @@
    "over17_pct": 3.6,
    "over814_pct": 0.7,
    "over15_pct": 1.5,
-   "over1522_pct": 0.4,
-   "over2330_pct": 0.2,
    "over30_pct": 0.9
   },
   {
@@ -139,8 +121,6 @@
    "over17_pct": 3.4,
    "over814_pct": 0.8,
    "over15_pct": 1.4,
-   "over1522_pct": 0.5,
-   "over2330_pct": 0.5,
    "over30_pct": 0.4
   }
  ]
