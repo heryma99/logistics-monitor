@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-09-20 09:09:07",
- "today_alerts": 18,
+ "generated_at": "2026-09-21 09:30:07",
+ "today_alerts": 17,
  "open_tickets": 44.0,
- "staging_pending": 43,
+ "staging_pending": 45,
  "overdue_lanes": 45,
  "channels_total": 120,
  "channels_ok": 75,
@@ -47,19 +47,13 @@
   {
    "name": "数据域",
    "level": "green",
-   "note": "快照 2026-09-20 09:09:07"
+   "note": "快照 2026-09-21 09:30:07"
   }
  ],
  "alerts": [
   {
-   "level": "红",
-   "text": "在途预警｜FBA15M1HXWNV 德国·空派包税：已用 43 天 / 参考 12.0+7.0 天 → 超全程",
-   "src": "在途监控(FBA)",
-   "rule": "A21"
-  },
-  {
    "level": "黄",
-   "text": "在途预警｜FBA15M0J3KLR 沙特·海派包税：已用 42 天 / 参考 45.0+15.0 天 → 头程偏慢",
+   "text": "在途预警｜FBA19P5LJRRH 美国·空派包税：已用 6 天 / 参考 6.0+8.0 天 → 头程偏慢",
    "src": "在途监控(FBA)",
    "rule": "A20"
   },
