@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-09-21 09:30:07",
- "today_alerts": 17,
+ "generated_at": "2026-09-23 20:43:37",
+ "today_alerts": 16,
  "open_tickets": 44.0,
- "staging_pending": 45,
+ "staging_pending": 46,
  "overdue_lanes": 45,
  "channels_total": 120,
  "channels_ok": 75,
@@ -47,16 +47,10 @@
   {
    "name": "数据域",
    "level": "green",
-   "note": "快照 2026-09-21 09:30:07"
+   "note": "快照 2026-09-23 20:43:37"
   }
  ],
  "alerts": [
-  {
-   "level": "黄",
-   "text": "在途预警｜FBA19P5LJRRH 美国·空派包税：已用 6 天 / 参考 6.0+8.0 天 → 头程偏慢",
-   "src": "在途监控(FBA)",
-   "rule": "A20"
-  },
   {
    "level": "黄",
    "text": "时效前置预警｜云途-云途全球专线挂号（特惠普货） 巴西：超15天以上占比 27.6%（457/1656 包裹已进入恶化段）",
